@@ -1,2 +1,3 @@
-# til
-Today I learnt
+# Today I Learnt
+
+- [Type declarations for a Vite app](https://github.com/petermekhaeil/til/blob/master/learnings/type-declarations-for-a-vite-app.md)
