@@ -1,11 +1,3 @@
----
-title: Type declarations for a Vite app
-date: 2022-01-10
-tags:
-  - typescript
-  - vite
----
-
 # Type declarations for a Vite app
 
 Vite uses esbuild to transpile Typescript into Javascript and [esbuild does not do any type checking](https://esbuild.github.io/content-types/#typescript).
