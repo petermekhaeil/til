@@ -1,4 +1,4 @@
-# Buttons are input elements that can have a value
+# Buttons can have a value like input elements
 
 The `<button>` element can have a value like `<input>` and this value can also be passed to the server when the form is submitted:
 
