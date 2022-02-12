@@ -5,4 +5,4 @@
 - [Buttons can have a value like input elements
 ](https://github.com/petermekhaeil/til/blob/master/learnings/buttons-can-have-a-value-like-input-elements.md)
 - [Enable HTTP/2 in Vite's Dev Server by using HTTPS
-](https://github.com/petermekhaeil/til/blob/master/learnings/https2-vite-dev-server.md)
+](https://github.com/petermekhaeil/til/blob/master/learnings/enable-http2-in-vites-dev-server-by-using-https.md)
