@@ -1,4 +1,4 @@
-# Add features to your Netlify site with snippet injection
+# Add features to your Netlify site with Snippet Injection
 
 [Netlify](https://netlify.com/) allows you to add code to your site at the CDN level by using a feature called [Snippet Injection](https://www.netlify.com/docs/inject-analytics-snippets/).
 
