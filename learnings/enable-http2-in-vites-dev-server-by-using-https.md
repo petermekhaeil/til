@@ -1,6 +1,6 @@
 # Enable HTTP/2 in Vite's Dev Server by using HTTPS
 
-Take advantage of [HTTP/2](https://developer.mozilla.org/en-US/docs/Glossary/HTTP_2) in Vite Dev Server by enabling `server.https` in your `vite.config.js`:
+Take advantage of [HTTP/2](https://developer.mozilla.org/en-US/docs/Glossary/HTTP_2) in Vite Dev Server by enabling `server.https` in your `vite.config.js`.
 
 ```js
 {
