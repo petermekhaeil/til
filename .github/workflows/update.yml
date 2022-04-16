@@ -12,7 +12,7 @@ jobs:
           cat /dev/null > README.md
 
           # Add Title
-          echo '# Today I Learned\n' > README.md
+          echo -e '# Today I Learned\n' > README.md
 
           # Loop through all TILs and add to README.md
           dir=./learnings
