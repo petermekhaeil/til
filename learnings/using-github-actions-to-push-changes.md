@@ -1,13 +1,17 @@
 # Using GitHub Actions to push changes
 
-We can use [GitHub Actions](https://docs.github.com/en/actions) to update the `README.md` each time a new TIL is created. The GitHub workflow is found [here](https://github.com/petermekhaeil/til/blob/master/.github/workflows/update.yml).
+We can use [GitHub Actions](https://docs.github.com/en/actions) to push a new commit each time there is a new change detected. 
+
+I've recently had to do this to automate updating `README.md` with a listing of the repository files each time a new push has been detected. The GitHub workflow is found [here](https://github.com/petermekhaeil/til/blob/master/.github/workflows/update.yml).
+
+Here are the learnings that may come useful to others:
 
 ## Using bash to clear file content
 
 ```bash
 cat /dev/null > README.md
 ```
-`/dev/null` is a pseudo file in Linux that can be used to empty files. It has no output so we can copy the empty content into a file.
+`/dev/null` is a pseudo file in Linux that has no output so we can override a file with this empty content.
 
 ## Using bash to echo a string with new line
 
