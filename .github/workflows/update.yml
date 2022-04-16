@@ -1,0 +1,30 @@
+name: Update README.md when new TIL is added.
+on:
+  push:
+    branches: [master]
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          # Clear README.md
+          cat /dev/null > README.md
+
+          # Add Title
+          echo '# Today I Learned\n' > README.md
+
+          # Loop through all TILs and add to README.md
+          dir=./learnings
+          for filename in "$dir"/*
+          do
+            title=$(head -n 1 $filename | sed 's/# //')
+            echo "- [$title](https://github.com/petermekhaeil/til/blob/master/$filename)" >> README.md
+          done
+
+          # Push changes
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add README.md
+          git commit -m "Update README.md"
+          git push
