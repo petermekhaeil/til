@@ -2,7 +2,7 @@
 
 Node.js supports the `FORCE_COLOR` environment variable to force color in the terminal output.
 
-```
+```bash
 FORCE_COLOR=0 // 2 colors (no color)
 FORCE_COLOR=1 // 16 colors
 FORCE_COLOR=2 // 256 colors
