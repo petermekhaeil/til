@@ -7,6 +7,7 @@
 - [Get last modified date using GitHub GraphQL API](https://github.com/petermekhaeil/til/blob/master/./learnings/get-last-modified-date-using-github-graphql-api.md)
 - [Hex color notation have an alpha channel](https://github.com/petermekhaeil/til/blob/master/./learnings/hex-color-notation-alpha-channel.md)
 - [Logging variables in Chrome DevTools using logpoints](https://github.com/petermekhaeil/til/blob/master/./learnings/logging-variables-in-chrome-devtools.md)
+- [Proxying using Netlify Redirects](https://github.com/petermekhaeil/til/blob/master/./learnings/proxying-using-netlify-redirects.md)
 - [Svelte components have file location meta data](https://github.com/petermekhaeil/til/blob/master/./learnings/svelte-components-have-file-location-meta-data.md)
 - [The Idiomatic Text element](https://github.com/petermekhaeil/til/blob/master/./learnings/the-idiomatic-text-element.md)
 - [Type declarations for a Vite app](https://github.com/petermekhaeil/til/blob/master/./learnings/type-declarations-for-a-vite-app.md)
