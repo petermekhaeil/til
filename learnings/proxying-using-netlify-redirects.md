@@ -4,19 +4,19 @@
 
 In the below example, requests to `/api` are proxied to `https://api.domain.com`:
 
-```
+```bash
 /api/*  https://api.example.com/:splat  200
 ```
 
 Here is an example that proxies a JS script to another location:
 
-```
+```bash
 /js/script.js https://domain.com/tracker.js 200
 ```
 
 Here is an example that combines the two examples above and this one is very useful for analytics tools:
 
-```
+```bash
 /api https://tracking-tool.com/api  200
 /js/script.js https://tracking-tool.com/tracker.js 200
 ```
