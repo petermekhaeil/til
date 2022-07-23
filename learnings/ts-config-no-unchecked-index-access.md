@@ -10,7 +10,7 @@ const myObject: Record<string, string[]> = {};
 myObject["myKey"].push("myString");
 ```
 
-This satisfies TypeScript because `myKey` is typed as `string` because of the index signature of `Record`. What we do not know though is if `myObject["myKey"]` is defined for us to use.
+This satisfies TypeScript because `myKey` is typed as `string` in the index signature of `myObject`. What we do not know yet is if `myObject["myKey"]` is defined for us to use.
 
 With `noUnCheckedIndexAccess` enabled, TypeScript will warn us that the object is possibly `undefined` and that we should check it exists:
 
