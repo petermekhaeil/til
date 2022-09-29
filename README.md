@@ -14,6 +14,7 @@
 - [Svelte components have file location meta data](https://github.com/petermekhaeil/til/blob/master/./learnings/svelte-components-have-file-location-meta-data.md)
 - [The Idiomatic Text element](https://github.com/petermekhaeil/til/blob/master/./learnings/the-idiomatic-text-element.md)
 - [TypeScript Config: noUnCheckedIndexAccess](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-config-no-unchecked-index-access.md)
+- [TypeScript: Exhaustiveness checking in switch with union type](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-exhaustive-switch.md)
 - [TypeScript: @ts-expect-error](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-expect-error.md)
 - [Array.prototype.reduce() can be typed in TypeScript](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-reduce-generic-type.md)
 - [Inferring the types from a Remix loader](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-remix-infer-loader.md)
