@@ -12,20 +12,20 @@ type Day =
   | "Saturday"
   | "Sunday";
 
-const day = "Monday" as Day;
-let result = 0;
-
-switch (day) {
-  case "Monday": {
-    result = 1;
-    break;
-  }
-  default: {
-    // `Type 'string' is not assignable to type 'never'.`
-    const exhaustiveCheck: never = day;
-    throw new Error(`Unexpected: ${exhaustiveCheck}`);
+function getDayIndex(day: Day) {
+  switch (day) {
+    case "Monday": {
+      return 1;
+    }
+    default: {
+      // `Type 'string' is not assignable to type 'never'.`
+      const _exhaustiveCheck: never = day;
+      return _exhaustiveCheck;
+    }
   }
 }
 ```
 
-`exhaustiveCheck` will have an error because TypeScript is attempting to assign the rest of the `Day` union to `never` which cannot happen.
+`_exhaustiveCheck` will have an error because TypeScript is attempting to assign the rest of the `Day` union to `never` which cannot happen.
+
+This can be found in the [TypeScript documentation](https://www.typescriptlang.org/docs/handbook/2/narrowing.html?#exhaustiveness-checking).
