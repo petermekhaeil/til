@@ -10,6 +10,7 @@
 - [Hex color notation have an alpha channel](https://github.com/petermekhaeil/til/blob/master/./learnings/hex-color-notation-alpha-channel.md)
 - [JSON.stringify replacer parameter](https://github.com/petermekhaeil/til/blob/master/./learnings/json-stringify-replacer-parameter.md)
 - [Logging variables in Chrome DevTools using logpoints](https://github.com/petermekhaeil/til/blob/master/./learnings/logging-variables-in-chrome-devtools.md)
+- [Accessing stdin with file descriptor 0](https://github.com/petermekhaeil/til/blob/master/./learnings/node-file-descriptor-0.md)
 - [Today I Learned: PHP](https://github.com/petermekhaeil/til/blob/master/./learnings/php.md)
 - [Proxying using Netlify Redirects](https://github.com/petermekhaeil/til/blob/master/./learnings/proxying-using-netlify-redirects.md)
 - [Svelte components have file location meta data](https://github.com/petermekhaeil/til/blob/master/./learnings/svelte-components-have-file-location-meta-data.md)
