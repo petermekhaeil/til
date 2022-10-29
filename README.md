@@ -19,6 +19,7 @@
 - [TypeScript Config: noUnCheckedIndexAccess](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-config-no-unchecked-index-access.md)
 - [TypeScript: Exhaustiveness checking in switch with union type](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-exhaustive-switch.md)
 - [TypeScript: @ts-expect-error](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-expect-error.md)
+- [Extending HTML Element Types in React 18](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-html-element-react-18.md)
 - [Array.prototype.reduce() can be typed in TypeScript](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-reduce-generic-type.md)
 - [Inferring the types from a Remix loader](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-remix-infer-loader.md)
 - [Type declarations for a Vite app](https://github.com/petermekhaeil/til/blob/master/./learnings/type-declarations-for-a-vite-app.md)
