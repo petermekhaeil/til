@@ -12,6 +12,7 @@
 - [Logging variables in Chrome DevTools using logpoints](https://github.com/petermekhaeil/til/blob/master/./learnings/logging-variables-in-chrome-devtools.md)
 - [Netlify Node.js Version](https://github.com/petermekhaeil/til/blob/master/./learnings/netlify-node-version.md)
 - [Accessing stdin with file descriptor 0](https://github.com/petermekhaeil/til/blob/master/./learnings/node-file-descriptor-0.md)
+- [Using Nunjucks Macros in Eleventy](https://github.com/petermekhaeil/til/blob/master/./learnings/nunjucks-macro-eleventy.md)
 - [Today I Learned: PHP](https://github.com/petermekhaeil/til/blob/master/./learnings/php.md)
 - [Proxying using Netlify Redirects](https://github.com/petermekhaeil/til/blob/master/./learnings/proxying-using-netlify-redirects.md)
 - [Svelte components have file location meta data](https://github.com/petermekhaeil/til/blob/master/./learnings/svelte-components-have-file-location-meta-data.md)
