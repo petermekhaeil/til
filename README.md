@@ -17,6 +17,7 @@
 - [Today I Learned: PHP](https://github.com/petermekhaeil/til/blob/master/./learnings/php.md)
 - [Proxying using Netlify Redirects](https://github.com/petermekhaeil/til/blob/master/./learnings/proxying-using-netlify-redirects.md)
 - [Svelte components have file location meta data](https://github.com/petermekhaeil/til/blob/master/./learnings/svelte-components-have-file-location-meta-data.md)
+- [Using the `tar` command](https://github.com/petermekhaeil/til/blob/master/./learnings/tar-archive.md)
 - [The Details disclosure element](https://github.com/petermekhaeil/til/blob/master/./learnings/the-details-element.md)
 - [The Idiomatic Text element](https://github.com/petermekhaeil/til/blob/master/./learnings/the-idiomatic-text-element.md)
 - [TypeScript Config: noUnCheckedIndexAccess](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-config-no-unchecked-index-access.md)
