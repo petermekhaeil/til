@@ -23,9 +23,6 @@ When `isString` is called, TypeScript will narrow the type to `string` if the fu
 Another example:
 
 ```ts
-
-
-```ts
 type Color = 'red' | 'blue' | 'green';
 
 function isRed(color: string): color is 'red' {
