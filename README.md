@@ -26,6 +26,7 @@
 - [Extending HTML Element Types in React 18](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-html-element-react-18.md)
 - [Array.prototype.reduce() can be typed in TypeScript](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-reduce-generic-type.md)
 - [Inferring the types from a Remix loader](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-remix-infer-loader.md)
+- [User-defined type guard in TypeScript](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-user-defined-type-guard.md)
 - [Type declarations for a Vite app](https://github.com/petermekhaeil/til/blob/master/./learnings/type-declarations-for-a-vite-app.md)
 - [Using GitHub Actions to push changes](https://github.com/petermekhaeil/til/blob/master/./learnings/using-github-actions-to-push-changes.md)
 - [Using Netlify Redirects to build a URL Shortener](https://github.com/petermekhaeil/til/blob/master/./learnings/using-netlify-redirects-to-build-a-url-shortener.md)
