@@ -8,6 +8,7 @@
 - [Get last modified date using GitHub GraphQL API](https://github.com/petermekhaeil/til/blob/master/./learnings/get-last-modified-date-using-github-graphql-api.md)
 - [Use same git commit message as previous commit](https://github.com/petermekhaeil/til/blob/master/./learnings/git-commit-same-message.md)
 - [Git Remove All Commits](https://github.com/petermekhaeil/til/blob/master/./learnings/git-remove-all-commits.md)
+- [Restore a deleted file in Git](https://github.com/petermekhaeil/til/blob/master/./learnings/git-restore-deleted-file.md)
 - [Hex color notation have an alpha channel](https://github.com/petermekhaeil/til/blob/master/./learnings/hex-color-notation-alpha-channel.md)
 - [JSON.stringify replacer parameter](https://github.com/petermekhaeil/til/blob/master/./learnings/json-stringify-replacer-parameter.md)
 - [Logging variables in Chrome DevTools using logpoints](https://github.com/petermekhaeil/til/blob/master/./learnings/logging-variables-in-chrome-devtools.md)
