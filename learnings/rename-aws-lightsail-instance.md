@@ -1,6 +1,6 @@
 # Rename an AWS Lightsail instance
 
-AWS Lightsail does not have an option to rename instances. This can be done by creating a snapshot of the existing instance and then creating a new instance from that snapshot.
+AWS Lightsail does not have an option to rename instances. However, you can create a new instance from a snapshot and give it the desired name. 
 
 ## Create a snapshot of the existing instance
 
