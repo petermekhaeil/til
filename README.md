@@ -4,6 +4,7 @@
 - [Add features to your Netlify site with Snippet Injection](https://github.com/petermekhaeil/til/blob/master/./learnings/add-features-to-your-netlify-site-with-snippet-injection.md)
 - [Buttons can have a value like input elements](https://github.com/petermekhaeil/til/blob/master/./learnings/buttons-can-have-a-value-like-input-elements.md)
 - [List the files with the most disk usage](https://github.com/petermekhaeil/til/blob/master/./learnings/disk-usage.md)
+- [Push Docker image to self-hosted registry](https://github.com/petermekhaeil/til/blob/master/./learnings/docker-push-to-registry.md)
 - [Enable HTTP/2 in Vite's Dev Server by using HTTPS](https://github.com/petermekhaeil/til/blob/master/./learnings/enable-http2-in-vites-dev-server-by-using-https.md)
 - [ ESLint's `no-restricted-syntax` rule](https://github.com/petermekhaeil/til/blob/master/./learnings/eslint-no-restricted-syntax.md)
 - [Get last modified date using GitHub GraphQL API](https://github.com/petermekhaeil/til/blob/master/./learnings/get-last-modified-date-using-github-graphql-api.md)
