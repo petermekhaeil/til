@@ -35,3 +35,4 @@
 - [Type declarations for a Vite app](https://github.com/petermekhaeil/til/blob/master/./learnings/type-declarations-for-a-vite-app.md)
 - [Using GitHub Actions to push changes](https://github.com/petermekhaeil/til/blob/master/./learnings/using-github-actions-to-push-changes.md)
 - [Using Netlify Redirects to build a URL Shortener](https://github.com/petermekhaeil/til/blob/master/./learnings/using-netlify-redirects-to-build-a-url-shortener.md)
+- [Delete lines in vi](https://github.com/petermekhaeil/til/blob/master/./learnings/vi-delete-lines.md)
