@@ -8,9 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          echo $(pwd)
-          chmod +x "${GITHUB_WORKSPACE}/update-release.sh"
-          "${GITHUB_WORKSPACE}/update-release.sh"
+          "${GITHUB_WORKSPACE}/update-readme.sh"
 
           # Push changes
           git config user.name github-actions
