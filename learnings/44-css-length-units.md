@@ -1,4 +1,6 @@
-There are **44** different units of length in CSS. [Adam Argyle](https://nerdy.dev/) has written a [Codepen](https://codepen.io/argyleink/pen/oNxbNzy) that lists the different units.
+# There are 44 CSS length units
+
+[Adam Argyle](https://nerdy.dev/) has written a [Codepen](https://codepen.io/argyleink/pen/oNxbNzy) that lists the different units.
 
 To learn more about what each unit means:
 - [Adam Argyle: New CSS Relative Units](https://nerdy.dev/new-relative-units-ric-rex-rlh-and-rch)
