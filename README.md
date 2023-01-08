@@ -1,5 +1,6 @@
 # Today I Learned
 
+- [There are **44** different units of length in CSS. [Adam Argyle](https://nerdy.dev/) has written a [Codepen](https://codepen.io/argyleink/pen/oNxbNzy) that lists the different units.](https://github.com/petermekhaeil/til/blob/master/./learnings/44-css-length-units.md)
 - [Add color using FORCE_COLOR](https://github.com/petermekhaeil/til/blob/master/./learnings/add-color-using-force-color.md)
 - [Add features to your Netlify site with Snippet Injection](https://github.com/petermekhaeil/til/blob/master/./learnings/add-features-to-your-netlify-site-with-snippet-injection.md)
 - [Buttons can have a value like input elements](https://github.com/petermekhaeil/til/blob/master/./learnings/buttons-can-have-a-value-like-input-elements.md)
