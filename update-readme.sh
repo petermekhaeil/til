@@ -4,8 +4,8 @@
 cat /dev/null > README.md
 
 # Add Title
-echo -e '# Today I Learned\n' > README.md
-echo -e 'This is a collection of short notes of the things I have learned on a daily basis while working on different technologies. I share these notes as I [learn in public](https://www.learninpublic.org/).\n' > README.md
+echo -e '# Today I Learned\n' >> README.md
+echo -e 'This is a collection of short notes of the things I have learned on a daily basis while working on different technologies. I share these notes as I [learn in public](https://www.learninpublic.org/).\n' >> README.md
 
 dir=./learnings
 til_array=()
@@ -19,6 +19,10 @@ do
 done
 
 sorted_array=($(printf "%s\n" "${til_array[@]}" | sort -r -k1,1 -t':'))
+
+num_items=${#sorted_array[@]}
+
+echo -e "_**${num_items}** TILs and counting..._\n" >> README.md
 
 for element in "${sorted_array[@]}"; do
     IFS=: read date filename <<< "$element"
