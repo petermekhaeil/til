@@ -8,19 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          # Clear README.md
-          cat /dev/null > README.md
-
-          # Add Title
-          echo -e '# Today I Learned\n' > README.md
-
-          # Loop through all TILs and add to README.md
-          dir=./learnings
-          for filename in "$dir"/*
-          do
-            title=$(head -n 1 $filename | sed 's/# //')
-            echo "- [$title](https://github.com/petermekhaeil/til/blob/master/$filename)" >> README.md
-          done
+          bash ./update-release.sh
 
           # Push changes
           git config user.name github-actions
