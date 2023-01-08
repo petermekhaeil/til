@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: |
           echo $(pwd)
-          bash ./update-release.sh
+          bash update-release.sh
 
           # Push changes
           git config user.name github-actions
