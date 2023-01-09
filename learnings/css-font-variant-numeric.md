@@ -1,4 +1,4 @@
-# CSS property: `font-variant-numeric`
+# CSS property: font-variant-numeric
 
 Some OpenType fonts support alternate numeric glyphs that can be styled using `font-variant-numeric`.
 
