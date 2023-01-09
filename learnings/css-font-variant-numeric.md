@@ -48,3 +48,8 @@ font-variant-numeric: slashed-zero tabular-nums;
 ## Support
 
 Not all fonts support these features. The values will have no effect if the font family does not have support.
+
+## Learn More
+
+- [MDN Web Docs: font-variant-numeric](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric)
+- [CSS Tricks: font-variant-numeric](https://css-tricks.com/almanac/properties/f/font-variant-numeric/)
