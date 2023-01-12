@@ -2,8 +2,9 @@
 
 This is a collection of short notes of the things I have learned on a daily basis while working on different technologies. I share these notes as I [learn in public](https://www.learninpublic.org/).
 
-_**41** TILs and counting..._
+_**42** TILs and counting..._
 
+- 2023-01-12: [JavaScript: Negative Zero (-0)](https://github.com/petermekhaeil/til/blob/master/./learnings/js-negative-zero.md)
 - 2023-01-11: [There are actually 50 CSS length units](https://github.com/petermekhaeil/til/blob/master/./learnings/50-css-length-units.md)
 - 2023-01-10: [CSS :has() pseudo-class](https://github.com/petermekhaeil/til/blob/master/./learnings/css-has-pseudo-class.md)
 - 2023-01-09: [CSS property: font-variant-numeric](https://github.com/petermekhaeil/til/blob/master/./learnings/css-font-variant-numeric.md)
