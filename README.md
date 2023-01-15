@@ -2,8 +2,9 @@
 
 This is a collection of short notes of the things I have learned on a daily basis while working on different technologies. I share these notes as I [learn in public](https://www.learninpublic.org/).
 
-_**44** TILs and counting..._
+_**45** TILs and counting..._
 
+- 2023-01-15: [TypeScript Assertion Functions](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-assertion-functions.md)
 - 2023-01-14: [CSS :is() pseudo-class](https://github.com/petermekhaeil/til/blob/master/./learnings/css-is-pseudo-class.md)
 - 2023-01-13: [Redirect stderr to stdout using 2>&1](https://github.com/petermekhaeil/til/blob/master/./learnings/file-descriptor-redirection.md)
 - 2023-01-12: [JavaScript: Negative Zero (-0)](https://github.com/petermekhaeil/til/blob/master/./learnings/js-negative-zero.md)
