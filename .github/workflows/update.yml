@@ -19,3 +19,6 @@ jobs:
           git add feed.json
           git commit -m "Update TIL listing"
           git push
+          curl -X POST -d {} https://api.netlify.com/build_hooks/${{ secrets.NETLIFY_BUILD_HOOK_ID }}
+
+
