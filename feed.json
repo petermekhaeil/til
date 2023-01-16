@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Add an object to existing JSON using jq",
+    "date": "2023-01-16",
+    "path": "jq-append-json.md",
+    "title": "Add an object to existing JSON using jq"
+  },
+  {
     "content": "# TypeScript Assertion Functions\n\nAssertion functions throw an error if a certain condition is not met. \n\n```ts\nassert(name === \"Peter\");\n```\n\nThe assertion function will throw an error `name` is not \"Peter\". \n\n## Assertion Signatures\n\nWith assertion functions, there is \"assertion signatures\" which are used to narrow the type of values to be more specific.\n\nConsider the below example: We are not sure of the type of `maybeNumber`. We can assert it is a number before continuing with the code flow. \n\n```ts\nfunction assert(condition: unknown): asserts condition {\n  if (!condition) {\n    throw new Error(\"Assertion failed.\");\n  }\n}\n\nlet maybeNumber: any;\nassert(typeof maybeNumber === \"number\");\n\nmaybeNumber;\n  // ^? let maybeNumber: number\n```\n\nWe now know that `maybeNumber` is a number because the assertion did not fail, so TypeScript narrowed the type down to `number.\n\nWe can be more specific with the condition. Below example has an assertion signature `asserts value is number`:\n\n```ts\nfunction assertIsNumber(value: unknown): asserts value is number {\n  if (typeof value !== \"number\") {\n    throw new Error(\"Not a number\");\n  }\n}\n\nlet maybeNumber: any;\nassert(typeof maybeNumber === \"number\");\n\nmaybeNumber;\n  // ^? let maybeNumber: number\n```\n\n## Putting it together\n\nWe can also include a custom message to be used as the error message when the assertion fails:\n\n```ts\nfunction assert(condition: unknown, message?: string): asserts condition {\n  if (!condition) {\n    throw new Error(message || 'Assertion failed.');\n  }\n}\n\nlet myVariable: { myKey: string } | undefined;\n\nmyVariable.myKey;\n // ^? 'myVariable' is possibly 'undefined'.\n\nassert(myVariable, \"myVariable is undefined\");\n\nmyVariable\n // ^? let myVariable: { myKey: string } \n```",
     "date": "2023-01-15",
     "path": "ts-assertion-functions.md",
