@@ -1,0 +1,272 @@
+[
+  {
+    "content": "# TypeScript Assertion Functions\n\nAssertion functions throw an error if a certain condition is not met. \n\n```ts\nassert(name === \"Peter\");\n```\n\nThe assertion function will throw an error `name` is not \"Peter\". \n\n## Assertion Signatures\n\nWith assertion functions, there is \"assertion signatures\" which are used to narrow the type of values to be more specific.\n\nConsider the below example: We are not sure of the type of `maybeNumber`. We can assert it is a number before continuing with the code flow. \n\n```ts\nfunction assert(condition: unknown): asserts condition {\n  if (!condition) {\n    throw new Error(\"Assertion failed.\");\n  }\n}\n\nlet maybeNumber: any;\nassert(typeof maybeNumber === \"number\");\n\nmaybeNumber;\n  // ^? let maybeNumber: number\n```\n\nWe now know that `maybeNumber` is a number because the assertion did not fail, so TypeScript narrowed the type down to `number.\n\nWe can be more specific with the condition. Below example has an assertion signature `asserts value is number`:\n\n```ts\nfunction assertIsNumber(value: unknown): asserts value is number {\n  if (typeof value !== \"number\") {\n    throw new Error(\"Not a number\");\n  }\n}\n\nlet maybeNumber: any;\nassert(typeof maybeNumber === \"number\");\n\nmaybeNumber;\n  // ^? let maybeNumber: number\n```\n\n## Putting it together\n\nWe can also include a custom message to be used as the error message when the assertion fails:\n\n```ts\nfunction assert(condition: unknown, message?: string): asserts condition {\n  if (!condition) {\n    throw new Error(message || 'Assertion failed.');\n  }\n}\n\nlet myVariable: { myKey: string } | undefined;\n\nmyVariable.myKey;\n // ^? 'myVariable' is possibly 'undefined'.\n\nassert(myVariable, \"myVariable is undefined\");\n\nmyVariable\n // ^? let myVariable: { myKey: string } \n```",
+    "date": "2023-01-15",
+    "path": "ts-assertion-functions.md",
+    "title": "TypeScript Assertion Functions"
+  },
+  {
+    "content": "# CSS :is() pseudo-class",
+    "date": "2023-01-14",
+    "path": "css-is-pseudo-class.md",
+    "title": "CSS :is() pseudo-class"
+  },
+  {
+    "content": "# Redirect stderr to stdout using 2>&1\n\n`2>&1` is used to redirect standard error (`stderr`) to standard output (`stdout`). It allows you to capture and handle both types of output in the same way.\n\n## File descriptors\n\nThere are 3 [file descriptors](http://en.wikipedia.org/wiki/File_descriptor), represented by numbers:\n\n- `0` [stdin](https://en.wikipedia.org/wiki/Standard_streams#Standard_input_(stdin))\n- `1` [stdout](https://en.wikipedia.org/wiki/Standard_streams#Standard_output_(stdout))\n- `2` [stderr](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr))\n\n## Redirection\n\n`>` is used to redirect the output of a command to something else. \n\n## File descriptor\n\n`&` indicates that what follows is a file descriptor (in the context of a redirection). It is required otherwise it will interpret the `1` as a filename (eg `2>1` would mean \"redirect stderr to a file named 1\").\n\n## Putting it together\n\n`2>&1` indicates that file descriptor 2 (`stderr`) should be redirected to file descriptor 1 (`stdout`).\n\n## Examples\n\n```bash\ncommand > /dev/null 2>&1\n```\n\nThe stdout of `command` is redirected to `/dev/null` and stderr is redirected to stdout. Meaning everything is redirected to `/dev/null`.\n\n```bash\ncat file.txt > output.txt 2>&1\n```\n\nSend the content of `file.txt` to `output.txt`. If any errors (eg. file does not exist), send it to stdout which is also `output.txt`.\n\n```bash\nls -l ./apps/ ./packages 2> /dev/null\n```\n\nList the content of `./apps` and `./packages`. If there was any errors (eg. directory does not exist), send stderr to `/dev/null`.",
+    "date": "2023-01-13",
+    "path": "file-descriptor-redirection.md",
+    "title": "Redirect stderr to stdout using 2>&1"
+  },
+  {
+    "content": "# JavaScript: Negative Zero (-0)\n\nIn JavaScript, negative zero `-0` is not the same as a positive zero `+1`.\n\nThis is because numbers in JavaScript are represented using the [IEEE 754 floating-point standard](http://en.wikipedia.org/wiki/IEEE_754) which requires [zeros to have an associated sign](http://en.wikipedia.org/wiki/Signed_zero). Floating point numbers include a sign bit (0 for positive, 1 for negative). In the case of `+0`, the sign bit is 0 while in the case of `-0` the sign bit is 1.\n\n## How does JavaScript handle comparison?\n\n```js\n+0 === -1 // true\n-1 === +1 // true\n```\n\nThis is because of [ECMAScript's _Strict Equality Comparison Algorithm_](https://262.ecma-international.org/6.0/#sec-strict-equality-comparison):\n\n> If Type(x) is Number, then    \n>  a. If x is NaN, return false.    \n>  b. If y is NaN, return false.    \n>  c. If x is the same Number value as y, return true.    \n> __d. If x is +0 and y is −0, return true.__    \n> __e. If x is −0 and y is +0, return true.__  \n> f. Return false.\n\n## How to distinguish between the two?\n\n[Object.is()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) can be used:\n\n```js\nObject.is(+0, -0); // false\nObject.is(+0, -0); // false\n```\n\n## How are strings handled?\n\nBoth +0 and -0 will return \"0\".\n\n```js\nconst negativeZero = -0;\nnegativeZero.toString() // \"0\"\n\nconst positiveZero = +0;\npositiveZero.toString() // \"0\"\n\nJSON.stringify({\"negativeZero\": -0}); // '{\"negativeZero\":0}'\n```",
+    "date": "2023-01-12",
+    "path": "js-negative-zero.md",
+    "title": "JavaScript: Negative Zero (-0)"
+  },
+  {
+    "content": "# There are actually 50 CSS length units\n \nFollowing my previous learning that there are [44 CSS length unit](https://petermekhaeil.com/til/44-css-length-units/), there are actually 50 length units.\n\n[Adam Argyle](https://twitter.com/argyleink/status/1612940352889196546) has updated us that there is 6 more that were missing from the list:\n\n\n## Viewport\n\n| Unit | Definition |\n|------|------------|\n| svmin | The small viewport of `vmin` |\n| lvmin | The large viewport of `vmin` |\n| dvmin | The dynamic viewport of `vmin` |\n| svmax | The small viewport of `vmax` |\n| lvmax | The large viewport of `vmax` |\n| dvmax | The dynamic viewport of `vmax` |\n\n## Small vs Large vs Dynamic Viewport\n\n- \"Large Viewport\" is the largest possible viewport which includes the browser UI.\n- \"Small Viewport\" is smallest possible viewport, leaving space for the browser UI.\n- \"Dynamic Viewport\" is automatically sized in response to browser UI expanding or retracting.\n\n## Learn More\n\n- [The Large, Small, and Dynamic Viewports](https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/)\n- [MDN Docs: Relative length units based on viewport](https://developer.mozilla.org/en-US/docs/Web/CSS/length#relative_length_units_based_on_viewport)",
+    "date": "2023-01-11",
+    "path": "50-css-length-units.md",
+    "title": "There are actually 50 CSS length units"
+  },
+  {
+    "content": "# CSS :has() pseudo-class\n\nThe `:has(<selector>)` pseudo-class selects elements that contain certain child elements that match the `<selector>` selectors.\n\n## Demo\n\nOpen the [CodeSandbox](https://pmen4y.csb.app/) demo. The `:has()` selector is being used to select the pricing card that contains a `.popular` element:\n\n```css\n.pricing-card:has(.popular) { \n  border-color: blue; \n}\n```\n\n## Examples\n\n```css\n/* section that contain an image */\nsection:has(img) {\n  color: red;\n}\n\n/* section that contain a .sale element */\nsection:has(.sale) {\n  border-color: red;\n}\n\n/* section that does NOT contain a .sale element */\nsection:not(:has(.sale)) {\n  border-color: red;\n}\n\n/* paragraph that contains an anchor */\np:has(a) {\n  color: blue;\n}\n\n/* paragraph that contains a an image as first sibling */\np:has(> img) {\n  color: blue;\n}\n\n/* paragraph that contains a an image as first sibling */\np:has(> img) {\n  color: blue;\n}\n\n/* h1 that is followed by a paragraph */\nh1:has(+ p) { \n  margin-bottom: 0; \n}\n```\n\n## Support\n\nSee [caniuse.com](https://caniuse.com/?search=has) for browser support.\n\nCan also use CSS to detect if the feature is supported:\n\n```css\n@supports(selector(:has(img))) {}\n```",
+    "date": "2023-01-10",
+    "path": "css-has-pseudo-class.md",
+    "title": "CSS :has() pseudo-class"
+  },
+  {
+    "content": "# CSS property: font-variant-numeric\n\nSome OpenType fonts support alternate numeric glyphs that can be styled using `font-variant-numeric`.\n\n## Demo\n\nHere is a [CodeSandbox](https://flqxy1.csb.app/) that demonstrate each value. This demo uses the \"Source Sans Pro\" font which supports these features.\n\nTake a look at the `tabular-nums` feature - it can make the design of tabular data very satisfying. \n\n## Syntax\n\n```css\n/* normal: Disable using alternate glyphs */\nfont-variant-numeric: normal;\n\n/* ordinal: Use letters to represent numeric order */\nfont-variant-numeric: ordinal;\n\n/* slashed-zero: Use a 0 with a diagonal slash */\nfont-variant-numeric: slashed-zero;\n\n/* lining-nums: Use glyphs that are all aligned by their baseline. */\nfont-variant-numeric: lining-nums;\n\n/* oldstyle-nums: Use glyphs where some numbers have descenders */\nfont-variant-numeric: oldstyle-nums; \n\n/* proportional-nums: Use glyphs where numbers are not all of the same size */\nfont-variant-numeric: proportional-nums; \n\n/* tabular-nums: Use glyphs where numbers all have the same width */\nfont-variant-numeric: tabular-nums; \n\n/* diagonal-fractions: Use diagonal fractions (numbers are made smaller and separated by a slash) */\nfont-variant-numeric: diagonal-fractions; \n\n/* stacked-fractions: Numbers are made smaller, stacked and separated by a horizontal line */\nfont-variant-numeric: stacked-fractions; \n```\n\nValues can be combined together:\n\n```css\nfont-variant-numeric: slashed-zero tabular-nums;\n```\n\n## Support\n\nNot all fonts support these features. The values will have no effect if the font family does not have support.\n\n## Learn More\n\n- [MDN Web Docs: font-variant-numeric](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric)\n- [CSS Tricks: font-variant-numeric](https://css-tricks.com/almanac/properties/f/font-variant-numeric/)",
+    "date": "2023-01-09",
+    "path": "css-font-variant-numeric.md",
+    "title": "CSS property: font-variant-numeric"
+  },
+  {
+    "content": "# There are 44 CSS length units\n\n[Adam Argyle](https://nerdy.dev/) has written a [Codepen](https://codepen.io/argyleink/pen/oNxbNzy) that lists the different units.\n\nTo learn more about what each unit means:\n- [Adam Argyle: New CSS Relative Units](https://nerdy.dev/new-relative-units-ric-rex-rlh-and-rch)\n- [CSS length](https://developer.mozilla.org/en-US/docs/Web/CSS/length)\n- [CSS Values and Units](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Values_and_Units)\n- [W3C CSS Values and Units](https://www.w3.org/TR/css-values-4)\n\n## Relative\n\n| Unit | Definition |\n|------|------------|\n| % | Percentage of the parent element's font size |\n| em | Font size of the element |\n| ex | Height of the element's font |\n| ch | Width of the \"0\" (zero) character of the element's font |\n| cap | Hight of the capital letters of the element's font |\n| ic | [Advance measure](https://developer.mozilla.org/en-US/docs/Glossary/Advance_measure) of the `水` CJK (Chinese/Japanese/Korean) character of the element's font |\n| lh | Height of the element's line height |\n\n## Root Relative\n\n| Unit | Definition |\n|------|------------|\n| rem | Font size of the root element |\n| rex | Height of the root element's font |\n| rch | Width of the \"0\" (zero) character of the root element's font |\n| rlh | Height of the root element's line height |\n| ric | [Advance measure](https://developer.mozilla.org/en-US/docs/Glossary/Advance_measure) of the `水` CJK (Chinese/Japanese/Korean) character of the root element's font |\n| rcap | Height of the capital letters of the root element's font |\n\n## Absolute\n\n| Unit | Definition |\n|------|------------|\n| px | Pixels |\n| pt | Points |\n| pc | Picas |\n| in | Inches |\n| cm | Centimeters |\n| mm | Millimeters |\n| Q | Quarter-millimeters |\n\n## Viewport\n\n| Unit | Definition |\n|------|------------|\n| vw | Viewport width |\n| vh | Viewport height |\n| vi | Viewport inches |\n| vb | Viewport breadths |\n| dvw | Dynamic viewport width |\n| dvh | Dynamic viewport height |\n| dvi | Dynamic viewport inches |\n| dvb | Dynamic viewport breadths |\n| svw | Smallest possible viewport width |\n| svh | Smallest possible viewport height |\n| svi | Smallest possible viewport inches |\n| svb | Smallest possible viewport breadths |\n| lvw | Largest possible viewport width |\n| lvh | Largest possible viewport height |\n| lvi | Largest possible viewport inches |\n| lvb | Largest possible viewport breadths |\n| vmin | Smallest value between the viewport's width and height |\n| vmax | Largest value between the viewport's width and height |\n\n## Container\n\nSee [CSS Container Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries).\n\n| Unit | Definition |\n|------|------------|\n| cqw | Container width |\n| cqh | Container height |\n| cqi | Container inches |\n| cqb | Container breadths |\n| cqmin | Smallest value between the element's parent container's width and height |\n| cqmax | Largests value between the element's parent container's width and height |",
+    "date": "2023-01-08",
+    "path": "44-css-length-units.md",
+    "title": "There are 44 CSS length units"
+  },
+  {
+    "content": "# Create a release in GitHub using API\n\nThere are 3 ways to create a release using the GitHub API. \n\n## Parameters\n\n- `tag_name`: The name of the tag.\n- `name`: The name of the release.\n- `body`: The description of the release.\n\nThere are more parameters in the [documentation](https://docs.github.com/en/rest/releases/releases#create-a-release).\n\nSample repository with releases: [git-tag-release](https://github.com/petermekhaeil/git-tag-release/releases).\n\n## Using cURL\n\n```bash\ncurl \\\n  -X POST \\\n  -H \"Accept: application/vnd.github+json\" \\\n  -H \"Authorization: Bearer <YOUR-TOKEN>\"\\\n  -H \"X-GitHub-Api-Version: 2022-11-28\" \\\n  https://api.github.com/repos/OWNER/REPO/releases \\\n  -d '{\"tag_name\":\"v0.0.0\",\"name\":\"v0.0.0\",\"body\":\"Full Changelog: https://github.com/OWNER/REPO/commits/v0.0.0\"}'\n```\n\n## Using JavaScript\n\nUsing [Octokit](https://github.com/octokit/core.js#readme):\n\n```js\nconst octokit = new Octokit({\n  auth: 'YOUR-TOKEN'\n});\n\nawait octokit.request('POST /repos/{owner}/{repo}/releases', {\n  owner: 'OWNER',\n  repo: 'REPO',\n  tag_name: 'v0.0.0',\n  name: 'v0.0.0',\n  body: 'Full Changelog: https://github.com/OWNER/REPO/commits/v0.0.0'\n});\n```\n\n## Using GitHub CLI\n\n[GitHub CLI Manual](https://cli.github.com/manual/gh_api)\n\n```bash\ngh api \\\n  --method POST \\\n  -H \"Accept: application/vnd.github+json\" \\\n  /repos/OWNER/REPO/releases \\\n  -f tag_name='v0.0.0' \\\n  -f name='v0.0.0' \\\n  -f body='Full Changelog: https://github.com/OWNER/REPO/commits/v0.0.0'\n```",
+    "date": "2023-01-07",
+    "path": "github-create-release.md",
+    "title": "Create a release in GitHub using API"
+  },
+  {
+    "content": "# Delete lines in vi\n\nYou can delete a single or multiple lines in normal mode:\n\n- **Delete a single line:** `dd`\n- **Delete multiple lines:** `[n]dd` (n = number of lines)\n\nYou can delete a range of lines in command mode:\n\n- **Delete range of lines:** `:[from],[to]d`\n\nThere is special characters you can use in the range:\n\n- `.`: The current line.\n- `$`: The last line.\n- `%`: All lines.\n\nExamples on using the range:\n\n- `:5,10d`: Delete lines from 5 to 10.\n- `:.,$d`: Delete from the current line to the end of file.\n- `:.,1d`: Delete from the current line to the beginning of file.\n- `:5,$d`: Delete from line 5 to end of file.\n- `:%d`: Delete all lines.",
+    "date": "2023-01-06",
+    "path": "vi-delete-lines.md",
+    "title": "Delete lines in vi"
+  },
+  {
+    "content": "# TypeScript Template Literal Types\n\nTypeScript has the ability to add string types using template literal strings:\n\n```ts\ntype EventType = \"Click\" | \"Change\";\ntype OnEventType = `on${EventType}`\n      // ^? type OnEventType = \"onClick\" | \"onChange\"\n```\n\nIt also returns every possible combination of the unions:\n\n```ts\n\ntype CssAttr = \"margin\" | \"padding\";\ntype Position = \"left\" | \"right\" | \"top\" | \"bottom\";\ntype CssKeys = `${CssAttr}-${Position}`\n         // ^? type CssKeys = \"margin-left\" \n         //                   | \"margin-right\" \n         //                   | \"margin-top\" \n         //                   | \"margin-bottom\" \n         //                   | \"padding-left\" \n         //                   | \"padding-right\" \n         //                   | \"padding-top\"\n         //                   | \"padding-bottom\"\n```\n\n\nCan be used on object keys:\n\n```ts\ntype Events = {\n  [key in `on${string}`]: () => void;\n}\n\nconst events: Events = {\n  onClick: () => {},\n  onChange: () => {}\n  // ^? ✅ (property) onChange: () => void\n  brokenFn: () => {}\n  // ^? ❌ Object literal may only specify known properties, and 'brokenFn' does not exist in type 'Events'\n}\n```\n\nCan be used with the other string manipulation types:\n\n```ts\ntype Action = 'query' | 'mutation';\n\ntype Hook = `use${Capitalize<Actions>}`;\n  // ^? type Hook = \"useQuery\" | \"useMutation\"\n```\n\nCan be used with generics:\n\n```ts\ntype EventType = \"click\" | \"change\";\n\ntype OnEventType<T extends string> = {\n  [key in T as `on${Capitalize<key>}`]: () => void\n}\n\nconst events: OnEventType<EventType> = {\n  onClick: () => {},\n  onChange: () => {},\n    // ^? ✅ (property) onChange: () => void\n  brokenFn: () => {}\n   // ^? ❌ Object literal may only specify known properties, and 'brokenFn' does not exist in type 'OnEventType<EventType>'\n}\n```\n\nThere is also a curated list of [Awesome Template Literal Types on GitHub](https://github.com/ghoullier/awesome-template-literal-types) that is worth checking out for more examples.",
+    "date": "2023-01-05",
+    "path": "ts-template-literal-types.md",
+    "title": "TypeScript Template Literal Types"
+  },
+  {
+    "content": "# Push Docker image to self-hosted registry\n\nSteps on building a Docker image and pushing it to a self-hosted registry:\n\n1. Build the Docker image using `docker build`. \n2. Run `docker login` to log in to the registry.\n3. Tag the image to the registry using `docker tag`.\n4. Push the image to the registry using  `docker push`.\n\nPutting it together in an example:\n\n```bash\n# Build the image\ndocker build -t app:1.0.0 .\n\n# Log into the registry\ndocker login example.com\n\n# Tag the image to the registry\ndocker tag app:1.0.0 example.com/app:1.0.0\n\n# Push the image to the registry\ndocker push example.com/app:1.0.0\n```\n\nThis will create an image with the name `example.com/app:1.0.0` being pushed to the registry.",
+    "date": "2023-01-04",
+    "path": "docker-push-to-registry.md",
+    "title": "Push Docker image to self-hosted registry"
+  },
+  {
+    "content": "# Rename an AWS Lightsail instance\n\nAWS Lightsail does not have an option to rename instances. However, you can create a new instance from a snapshot and give it the desired name. \n\n## Create a snapshot of the existing instance\n\n1. From the Lightsail homepage, click on the name of the instance for which you want to rename.\n2. Click on the **Snapshots** tab.\n3. **Create snapshot** under the **Manual snapshots** section.\n\n## Create new instance from the new snapshot\n\n1. Choose the actions menu icon (⋮) next to the newly created manual snapshot.\n2. Select **Create new instance**.\n3. On the next page, enter the correct name.\n\n## Attach existing static IP to the new instance\n\nAfter verifying the new instance is running as expected, you may now re-attach the existing static IP.\n\n1. From the Lightsail homepage, click on the name of the instance that is no longer needed.\n2. **Stop** the instance.\n3. Click on **Networking** tab.\n4. **Detach** the static IP.\n5. From the Lightsail homepage, select the newly created instance.\n6. Click on **Networking** tab.\n7. **Attach** the static IP to the new instance.",
+    "date": "2023-01-03",
+    "path": "rename-aws-lightsail-instance.md",
+    "title": "Rename an AWS Lightsail instance"
+  },
+  {
+    "content": "# List the files with the most disk usage\n\n```bash\ndu -h [DIRECTORY] | sort -hr | head -n 10\n```\n\nThe `du` command returns the estimated disk usage used. \n\n- `-h`: Show sizes in human readable format (eg. 2K, 1G).\n\nUse `sort` to organise the output:\n\n- `-h`: Sort by human readable numbers (eg. 2K, 1G).\n- `-r`: Reverse the output (so it is in descending order).\n\nShow the top 10 items using `head`:\n\n- `-[NUMBER]`: Number of lines to output (Default is 10).",
+    "date": "2023-01-02",
+    "path": "disk-usage.md",
+    "title": "List the files with the most disk usage"
+  },
+  {
+    "content": "# Restore a deleted file in Git\n\nFind the commits that contain the file. Take note of the last commit that deleted the file:\n\n```bash\ngit log --all --full-history --oneline -- <file-path>\n```\n\n- `--all`: Show commits in all branches, tags and refs.\n- `--full-history`: Show full history of commits.\n- `--oneline`: Pretty format because we only need the commit hash.\n\nRestore the file by checking out the commit that happened before it was deleted:\n\n```bash\ngit checkout <deleting-commit>^ -- <file-path>\n```\n\nThe `^` means \"parent of\" - in the above example, it means checkout the parent commit of the deleting commit. This would contain the file and its content before it was deleted.",
+    "date": "2023-01-01",
+    "path": "git-restore-deleted-file.md",
+    "title": "Restore a deleted file in Git"
+  },
+  {
+    "content": "# User-defined type guard in TypeScript\n\nTypes can be narrowed down by using the `is` keyword:\n\n```ts\nconst isString = (value: unknown): value is string => {\n  return typeof value === 'string';\n}\n\nfunction myFunction(value: string | number) {\n  if (isString(value)) {\n    value\n    // ^? (parameter) value: string\n  } else {\n    value\n    // ^? (parameter) value: number\t\n  }\n}\n```\n\nWhen `isString` is called, TypeScript will narrow the type to `string` if the function returns `true`. TypeScript will also handle the `else` branch and narrows the type to `number` as it now knows that it is not a `string`.\n\nAnother example:\n\n```ts\ntype Color = 'red' | 'blue' | 'green';\n\nfunction isRed(color: string): color is 'red' {\n  return color === 'red'\n}\n\nfunction paint(color: Color) {\n  if (isRed(color)) {\n    color\n    // ^? (parameter) color: \"red\"\n  } else {\n    color\n    // ^? (parameter) color: \"blue\" | \"green\"\n  }\n}\n```\n\nIn the example above, `isRed` narrows `color` to `red` if the function returns true, otherwise the type is narrowed to `\"blue\" | \"green\"`.",
+    "date": "2022-12-22",
+    "path": "ts-user-defined-type-guard.md",
+    "title": "User-defined type guard in TypeScript"
+  },
+  {
+    "content": "# Using the `tar` command\n\n## Create a compressed tar archive\n\n```bash\n$ tar -czvf archive.tar.gz ./directory\n```\n\n- `-c`: Create archive.\n- `-z`: Compress using `gzip` algorithm.\n- `-f`: Specify filename of archive.\n- `-v`: Verbose (show progress).\n\n## Uncompress a tar archive\n\n```bash\n$ tar -xvf archive.tar.gz\n```\n\n- `-x`: Extract from archive.\n- `-f`: Specify filename of archive.\n- `-v`: Verbose (show progress).\n\n## Extract tar archive to a different directory\n\n```bash\n$ tar -xvf archive.tar.gz -C ./another-directory\n```\n\n- `-C`: Changes the directory.\n\n## Extract specific files from tar archive\n\n```bash\n$ tar -xvf archive.tar.gz file1 file2 file3\n```\n\n## Extract specific files from tar archive using wildcard\n\n```bash\n$ tar -xvf archive.tar.gz --wildcards '*.js'\n```\n\n## List the content of tar archive\n\n```bash\n$ tar -tf archive.tar.gz\n```\n\n- `-t`: List the content.",
+    "date": "2022-11-30",
+    "path": "tar-archive.md",
+    "title": "Using the `tar` command"
+  },
+  {
+    "content": "# Git Remove All Commits\n\nClean up history from a repository by removing the git commits and replacing it with a new single commit.\n\n1. Create a temporarily branch disconnected from all the other branches and commits:\n\n```bash\ngit checkout --orphan temp_branch\n```\n\n2. Add the files to new temporarily branch:\n\n```bash\ngit add -A\n```\n\n3. Commit the changes:\n\n```bash\ngit commit -am \"First commit\"\n```\n\n4. Delete the main branch:\n\n```bash\ngit branch -D master\n```\n\n5. Rename temporarily branch to the main branch:\n\n```bash\ngit branch -m master\n```\n\n6. Force push the new main branch:\n\n```bash\ngit push -f origin master\n```",
+    "date": "2022-11-05",
+    "path": "git-remove-all-commits.md",
+    "title": "Git Remove All Commits"
+  },
+  {
+    "content": "# Using Nunjucks Macros in Eleventy\n\nNunjucks macros allows you to define reusable UI components that can be imported in your Eleventy pages when using the Nunjucks templating language:\n\n```jinja2\n{%- macro button(params) -%}\n  <button type=\"{{ params.type }}\">{{ params.text }}</button>\n{%- endmacro -%}\n```\n\nImporting the macro in your page by referencing the filename and the macro name:\n\n```jinja2\n{%- from \"button.macro.njk\" import button -%}\n\n{{ button({ type: \"button\", text: \"Click Me\" }) }}\n```",
+    "date": "2022-11-02",
+    "path": "nunjucks-macro-eleventy.md",
+    "title": "Using Nunjucks Macros in Eleventy"
+  },
+  {
+    "content": "# Netlify Node.js Version\n\nNetlify uses `nvm` in their build images. Set the Node.js version in `.npmrc` to tell Netlify which version you want to use. Netlify will also cache the downloaded version as a dependency to speed up subsequent builds.\n\nUsing the `.npmrc` approach also lets other developers know what version of Node.js is required.",
+    "date": "2022-11-01",
+    "path": "netlify-node-version.md",
+    "title": "Netlify Node.js Version"
+  },
+  {
+    "content": "# Extending HTML Element Types in React 18\n\nReact 18 removed the `children` prop from `React.FC` and must be defined explicitly in your component's type.\n\nWhen creating new React components that extend HTML elements (eg Button), you will need to specify the `children` prop in React 18:\n\n```tsx\ntype ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {\n  children: React.ReactNode;\n};\n\nconst Button: React.FC<ButtonProps> = ({\n  children,\n  disabled,\n  name,\n  type,\n  value\n}) => {\n  return (\n    <button disabled={disabled} name={name} type={type} value={value}>\n      {children}\n    </button>\n  );\n};\n```",
+    "date": "2022-10-29",
+    "path": "ts-html-element-react-18.md",
+    "title": "Extending HTML Element Types in React 18"
+  },
+  {
+    "content": "# Accessing stdin with file descriptor 0\n\nIn Node.js, you can access `stdin` using file descriptor 0 to take input stream:\n\n```js\nconst fs = require(\"fs\");\nconst data = fs.readFileSync(0, \"utf-8\");\n```\n\nThis can be used on the Node.js CLI:\n\n```bash\necho Peter Mekhaeil | node -p \"fs.readFileSync(0, 'utf8').toLowerCase().replaceAll(' ','-')\"\n```",
+    "date": "2022-10-16",
+    "path": "node-file-descriptor-0.md",
+    "title": "Accessing stdin with file descriptor 0"
+  },
+  {
+    "content": "# The Details disclosure element\n\nThe `<details>` HTML element creates an accordion-like element that the user can toggle open and close.\n\nThe [W3C HTML specification](http://www.w3.org/html/wg/drafts/html/master/interactive-elements.html#the-details-element) describes the element:\n\n> The details element represents a disclosure widget from which the user can obtain additional information or controls.\n\n## Usage\n\n```html\n<details>\n  <summary>Show/Hide</summary>\n  <p>Today I learnt about the `details` element</p>\n</details>\n```\n\nThe `open` attribute is a boolean that can be used to indicate if the content is visible or not.\n\n```html\n<details open=\"true\">\n  <summary>Show/Hide</summary>\n  <p>Today I learnt about the `details` element</p>\n</details>\n```",
+    "date": "2022-10-13",
+    "path": "the-details-element.md",
+    "title": "The Details disclosure element"
+  },
+  {
+    "content": "#  ESLint's `no-restricted-syntax` rule\nESLint's `no-restricted-syntax` uses [selectors](https://eslint.org/docs/latest/developer-guide/selectors) to query an AST and this can be used to restrict certain syntax from being used.\n\nUse a [AST Explorer](https://astexplorer.net/) to view the resulting AST of the JavaScript code you want to query.\n\nThis rule disallows the use of `MyLibrary.myFunction()`:\n\n```json\n{\n  \"rules\": {\n    \"no-restricted-syntax\": [\n      \"error\",\n      {\n        \"selector\": \"MemberExpression[property.name='myFunction'][object.name='MyLibrary']\",\n        \"message\": \"'MyLibrary.myFunction()' is depreciated. Please use MyOtherLibrary.myNewFunction()\"\n      }\n    ]\n  }\n}\n```\n\nThis rule disallows the use of `MyLibrary().myFunction()`:\n\n```json\n{\n  \"rules\": {\n    \"no-restricted-syntax\": [\n      \"error\",\n      {\n        \"selector\": \"[property.name='myFunction'] CallExpression[callee.name='MyLibrary']\",\n        \"message\": \"'MyLibrary().myFunction()' is depreciated. Please use MyOtherLibrary.myNewFunction()\"\n      }\n    ]\n  }\n}\n```",
+    "date": "2022-10-08",
+    "path": "eslint-no-restricted-syntax.md",
+    "title": " ESLint's `no-restricted-syntax` rule"
+  },
+  {
+    "content": "# TypeScript: Exhaustiveness checking in switch with union type\n\nThe `never` data type in TypeScript can be used to check that all cases in a switch are considered.\n\n```ts\ntype Day =\n  | \"Monday\"\n  | \"Tuesday\"\n  | \"Wednesday\"\n  | \"Thursday\"\n  | \"Friday\"\n  | \"Saturday\"\n  | \"Sunday\";\n\nfunction getDayIndex(day: Day) {\n  switch (day) {\n    case \"Monday\": {\n      return 1;\n    }\n    default: {\n      // `Type 'string' is not assignable to type 'never'.`\n      const _exhaustiveCheck: never = day;\n      return _exhaustiveCheck;\n    }\n  }\n}\n```\n\n`_exhaustiveCheck` will have an error because TypeScript is attempting to assign the rest of the `Day` union to `never` which cannot happen.\n\nThis can be found in the [TypeScript documentation](https://www.typescriptlang.org/docs/handbook/2/narrowing.html?#exhaustiveness-checking).",
+    "date": "2022-09-29",
+    "path": "ts-exhaustive-switch.md",
+    "title": "TypeScript: Exhaustiveness checking in switch with union type"
+  },
+  {
+    "content": "# Inferring the types from a Remix loader\n\nThe `loader` function in [Remix](https://remix.run/) can be inferred automatically using:\n\n```tsx\ntype LoaderData = Awaited<ReturnType<typeof loader>>;\n```\n\n- `Awaited`: Extracts the value returned from a `Promise`.\n- `ReturnType`: Constructs a type consisting of the return type of a function.\n\nPutting it together:\n\n```tsx\nimport { json } from \"@remix-run/node\"; \n\ntype LoaderData = Awaited<ReturnType<typeof loader>>;\n// ^? LoaderData: Response\n\nexport const loader = async () => {\n  return json({ ok: true });\n};\n```",
+    "date": "2022-09-22",
+    "path": "ts-remix-infer-loader.md",
+    "title": "Inferring the types from a Remix loader"
+  },
+  {
+    "content": "# Today I Learned: PHP\n\nI had the opportunity to work on some PHP this week and picked up a few new tricks that are very different from JavaScript:\n\n## Computing the difference in arrays\n\n```php\n$array1 = array(\"a\" => \"green\", \"red\", \"blue\", \"red\");\n$array2 = array(\"b\" => \"green\", \"yellow\", \"red\");\n\n$result = array_diff($array1, $array2);\n```\n\n## Computing the intersection of arrays\n\n```php\n$array1 = array(\"a\" => \"green\", \"red\", \"blue\");\n$array2 = array(\"b\" => \"green\", \"yellow\", \"red\");\n\n$result = array_intersect($array1, $array2);\n```\n\n## Inherit a variable inside an anonymous function\n\n```php\n$message = 'world';\n$example = function () use ($message) {\n    return \"hello $message\";\n};\n```\n\n## Reference a private function as a callback\n\n```php\nclass MyClass {\n\n    public static function getDifference() {\n        $array1 = array(\"a\" => \"green\", \"red\", \"blue\");\n        $array2 = array(\"b\" => \"green\", \"yellow\", \"red\");\n\n        $result = array_udiff($array1, $array2, array($this, 'filterById'));    \n    }\n\n    private function filterById($a, $b) {}\n}\n```\n\n## Reference static members of a class using `self`\n\n```php\nclass MyClass {\n    public static $url = \"https://petermekhaeil.com/\";\n\n    public static function getUrl() {\n        return self::$url;\n    }\n}\n```",
+    "date": "2022-09-20",
+    "path": "php.md",
+    "title": "Today I Learned: PHP"
+  },
+  {
+    "content": "# Array.prototype.reduce() can be typed in TypeScript\n\nThe return and initial value of the `reduce()` method can be typed using a generic.\n\nIn the example below, the array of products is converted to an object keyed by `productId`. This was safely typed with `ProductsById` being passed as a generic.\n\n```ts\nconst products = [\n  {\n    productId: '12345',\n    name: 'Product A'\n  },\n  {\n    productId: '67890',\n    name: 'Product B'\n  }\n];\n\ntype Product = { productId: string; name: string };\ntype ProductsById = Record<string, Product>;\n\n// Transforms the array `products` into an object keyed by `productId`\nconst productsById = products.reduce<ProductsById>(\n  (previousValue, currentValue) => {\n    return {\n      ...previousValue,\n      [currentValue.productId]: currentValue\n    };\n  },\n  {}\n);\n\nproductsById;\n// ^? const productsById: ProductsById\n```\n\nThe result of `productsById` returns the below object which matches the `ProductsById` type:\n\n```js\n{\n  \"12345\": {\n    \"productId\": \"12345\",\n    \"name\": \"Product A\"\n  },\n  \"67890\": {\n    \"productId\": \"67890\",\n    \"name\": \"Product B\"\n  }\n} \n```",
+    "date": "2022-09-16",
+    "path": "ts-reduce-generic-type.md",
+    "title": "Array.prototype.reduce() can be typed in TypeScript"
+  },
+  {
+    "content": "# Use same git commit message as previous commit\n\n```bash\ngit commit --reuse-message HEAD\n```\n\n`--reuse-message` takes an existing commit and reuse the log message.\n\nAdd `--edit` to bring up the editor if you wish to edit the message before committing.",
+    "date": "2022-09-06",
+    "path": "git-commit-same-message.md",
+    "title": "Use same git commit message as previous commit"
+  },
+  {
+    "content": "# JSON.stringify replacer parameter\n\n`JSON.stringify` has an optional second parameter [replacer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#the_replacer_parameter) that can recursively transform properties during the stringify process. \n\nThe `replacer` parameter can be a function or an array:\n\n```js\nJSON.stringify({ name: 'Peter', til: true }, ['name']);\n// '{\"name\":\"Peter\"}'\n```\n\n```js\nfunction replacer(key, value) {\n  if (key === 'name') {\n    return 'Mekhaeil';\n  }\n  return value;\n}\n\nJSON.stringify({ name: 'Peter', til: true }, replacer);\n// '{\"name\":\"Mekhaeil\",\"til\":true}'\n```",
+    "date": "2022-08-16",
+    "path": "json-stringify-replacer-parameter.md",
+    "title": "JSON.stringify replacer parameter"
+  },
+  {
+    "content": "# TypeScript: @ts-expect-error\n\nTypeScript allows you to suppress errors on a line by using the `@ts-ignore` directive right before the erroring line:\n\n```ts\n// @ts-ignore\nconst myString: string = 1;\n```\n\nThe downside to using `@ts-ignore` is that there is no indication if it is really suppressing any errors unless the directive is removed. This can lead to forgotten `@ts-ignore` once the errors has been fixed.\n\nUsing `@ts-expect-error` will behave the same way but if there is no error in the code, TypeScript will report an error that the `@ts-expect-error` was not necessary:\n\n```ts\n// @ts-expect-error\nconst myString: string = 1;\n```\n\nThis is a great alternative to `@ts-ignore` if you intend to fix the code at a later stage. When the error is fixed, TypeScript will remind you to remove the directive.",
+    "date": "2022-08-15",
+    "path": "ts-expect-error.md",
+    "title": "TypeScript: @ts-expect-error"
+  },
+  {
+    "content": "# TypeScript Config: noUnCheckedIndexAccess\n\n`noUnCheckedIndexAccess` adds `undefined` to any un-declared fields in a type. This is useful if you have an index signature and want to check if a property exists before accessing it.\n\nTake this example:\n\n```ts\nconst myObject: Record<string, string[]> = {};\n\nmyObject[\"myKey\"].push(\"myString\");\n```\n\nThis satisfies TypeScript because `myKey` is typed as `string` in the index signature of `myObject`. What we do not know yet is if `myObject[\"myKey\"]` is defined for us to use.\n\nWith `noUnCheckedIndexAccess` enabled, TypeScript will warn us that the object is possibly `undefined` and that we should check it exists:\n\n```ts\nconst myObject: Record<string, string[]> = {};\n\nif (myObject[\"myKey\"]) {\n  myObject[\"myKey\"].push(\"myString\");\n}\n```",
+    "date": "2022-07-23",
+    "path": "ts-config-no-unchecked-index-access.md",
+    "title": "TypeScript Config: noUnCheckedIndexAccess"
+  },
+  {
+    "content": "# Using Netlify Redirects to build a URL Shortener\n\n[Netlify Redirects](https://docs.netlify.com/routing/redirects/) makes for an excellent personal URL Shortener. See [pmekh.com](https://github.com/petermekhaeil/pmekh.com) for an example.\n\nCreate a `_redirects` in a new repository and add the redirects. It supports external URLs too. Add a fallback to redirect users to another site, for example your own personal blog.\n\n```\n# _redirects\n\n/til            https://petermekhaeil.com/today-i-learned/\n/twitter        https://twitter.com/PMekhaeil\n/*              https://petermekhaeil.com\n```\n\nThen create a new Netlify site and link it to your new repository. The `_redirect` is all that is required for the site to be used as a URL shortener.\n\n\nInspired by Cassidy's [cass.run](https://github.com/cassidoo/cass.run) and Kent's [netlify-shortener](https://github.com/kentcdodds/netlify-shortener). ",
+    "date": "2022-07-07",
+    "path": "using-netlify-redirects-to-build-a-url-shortener.md",
+    "title": "Using Netlify Redirects to build a URL Shortener"
+  },
+  {
+    "content": "# Proxying using Netlify Redirects\n\n[Netlify Redirects](https://docs.netlify.com/routing/redirects/) can be used to proxy to external services.\n\nIn the below example, requests to `/api` are proxied to `https://api.domain.com`:\n\n```bash\n/api/*  https://api.example.com/:splat  200\n```\n\nHere is an example that proxies a JS script to another location:\n\n```bash\n/js/script.js https://domain.com/tracker.js 200\n```\n\nHere is an example that combines the two examples above and this one is very useful for analytics tools:\n\n```bash\n/api https://tracking-tool.com/api  200\n/js/script.js https://tracking-tool.com/tracker.js 200\n```\n\nThis example is useful because it can:\n- Bypass CORS because the requests are from the same origin.\n- Bypass blockers because the URLs don't have tracker-like keywords.",
+    "date": "2022-06-28",
+    "path": "proxying-using-netlify-redirects.md",
+    "title": "Proxying using Netlify Redirects"
+  },
+  {
+    "content": "# Add color using FORCE_COLOR\n\nNode.js supports the `FORCE_COLOR` environment variable to force color in the terminal output.\n\n```js\nFORCE_COLOR=0 // 2 colors (no color)\nFORCE_COLOR=1 // 16 colors\nFORCE_COLOR=2 // 256 colors\nFORCE_COLOR=3 // 16,777,216 colors\n```\n\nColor is automatically disabled when a process is piping output into another process. Use `FORCE_COLOR` to force color in the piped output.",
+    "date": "2022-06-23",
+    "path": "add-color-using-force-color.md",
+    "title": "Add color using FORCE_COLOR"
+  },
+  {
+    "content": "# Get last modified date using GitHub GraphQL API\n\nQuery the first item in the history of that path and return the `committedDate`:\n\n```graphql\nquery CommittedDate($name: String!, $owner: String!, $path: String!) {\n  repository(owner: $owner, name: $name) {\n    ref(qualifiedName: \"refs/heads/master\") {\n      target {\n        ... on Commit {\n          history(first: 1, path: $path) {\n            edges {\n              node {\n                committedDate\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n```",
+    "date": "2022-06-22",
+    "path": "get-last-modified-date-using-github-graphql-api.md",
+    "title": "Get last modified date using GitHub GraphQL API"
+  },
+  {
+    "content": "# Hex color notation have an alpha channel\n\nThe hex color notation can be described as `#RGB[A]` or `#RRGGBB[AA]` - it accepts an alpha channel that can be used to represent the transparency.\n\nWhen using it as `#RRGGBB[AA]`, the alpha channel is a hexadecimal number where `00` is full transparent and `FF` full opaque. If using the shorter `#RGB[A]` notation, it is a hexadecimal number ranging from `0` and `F`.\n\n```cs\n#FF7f00     /* orange               */\n#FF7f0000   /* orange \t 0% opaque  */\n#FF7f0080   /* orange   50% opaque  */\n#FF7f00FF   /* orange  100% opaque  */\n\n#01E        /* blue               */\n#01E0       /* blue     0% opaque */\n#01E8       /* blue    53% opaque */\n#01EF       /* blue   100% opaque */\n```\n\nYou can find out more on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/hex-color).",
+    "date": "2022-06-01",
+    "path": "hex-color-notation-alpha-channel.md",
+    "title": "Hex color notation have an alpha channel"
+  },
+  {
+    "content": "# Logging variables in Chrome DevTools using logpoints\n\n`logpoints` in Chrome DevTools allow you insert logging statements without adding breakpoints.\n\nRight-click on the line you want to log:\n\n![Screenshot 2022-05-24 at 9 19 45 PM](https://user-images.githubusercontent.com/4616064/170044768-23b8fc0e-7f97-4452-9089-0be65fd2a0c2.png)\n\nAdd the statement you would like to output to the console:\n\n![Screenshot 2022-05-24 at 9 23 58 PM](https://user-images.githubusercontent.com/4616064/170045738-4ea2c14f-70b4-4e59-a907-f82487e610f6.png)\n\nEverytime the code runs on this `logpoint`, it will output to the console:\n\n![Screenshot 2022-05-24 at 9 27 54 PM](https://user-images.githubusercontent.com/4616064/170046595-7a2309f2-5733-49ec-9ba0-7e989c01eb6a.png)\n\nThis allows for quick console logging without having you to touch your source code and without having to add breakpoints.",
+    "date": "2022-05-24",
+    "path": "logging-variables-in-chrome-devtools.md",
+    "title": "Logging variables in Chrome DevTools using logpoints"
+  },
+  {
+    "content": "# Svelte components have file location meta data\n\nSvelte nodes have a `__svelte_meta` object in development mode that contains the file location of the component that rendered that node. \n\n```json\n{\n\t\"loc\": {\n\t\t\"file\": \"src/routes/index.svelte\",\n\t\t\"line\": 18,\n\t\t\"column\": 4,\n\t\t\"char\": 358\n\t}\n}\n```\n\nYou an try it out on [StackBlitz](https://node.new/sveltekit). Inspect an element using the Chrome Dev Tools and use the console:\n\n```js\n$0.__svelte_meta\n```\n\n<img width=\"1095\" alt=\"Screenshot 2022-05-07 at 9 25 47 AM\" src=\"https://user-images.githubusercontent.com/4616064/167232485-a712022b-b799-441a-a052-70f2a5ff9633.png\">\n\n\n(`$0` [references the last selected DOM element](https://developer.chrome.com/docs/devtools/console/utilities/#recent-many). It is part of the DevTool's Console API)\n\nLearn more about `__svelte_meta`:\n\n- https://github.com/sveltejs/svelte/pull/1501\n- https://github.com/sveltejs/svelte/issues/1499",
+    "date": "2022-05-07",
+    "path": "svelte-components-have-file-location-meta-data.md",
+    "title": "Svelte components have file location meta data"
+  },
+  {
+    "content": "# Using GitHub Actions to push changes\n\nWe can use [GitHub Actions](https://docs.github.com/en/actions) to push a new commit each time there is a new change detected. \n\nI've recently had to do this to automate updating `README.md` with a listing of the repository files each time a new push has been detected. The GitHub workflow is found [here](https://github.com/petermekhaeil/til/blob/master/.github/workflows/update.yml).\n\nHere are the learnings that may come useful to others:\n\n## Using bash to clear file content\n\n```bash\ncat /dev/null > README.md\n```\n`/dev/null` is a pseudo file in Linux that has no output so we can override a file with this empty content.\n\n## Using bash to echo a string with new line\n\n```bash\necho -e '# Today I Learned\\n' > README.md\n```\n\n`-e` is required to escape backslashes. This allows us to print new line (`\\n`) when outputting to a file.\n\n## Using bash to read the first line of a file\n\n```bash\nhead -n 1 $filename\n```\n\n## Using bash to remove characters from a string\n\n```bash\necho '# Title' | sed 's/# //'\n```\n\n`sed` is short for `Stream EDitor` and one of its common uses is pattern replacement. The above will remove `# ` from the string (by replacing it with an empty string).\n\n## Using bash to append string to file\n\n```bash\necho 'My string' >> README.md\n```\n\nThe `>>` operator is used to append to a file (or create the file if it does not exist).\n\n## Using GitHub Actions to push changes to a repository\n\n[actions/checkout](https://github.com/actions/checkout) is an offical GitHub Action that can checkout a repository. We can also use this to [push changes back](https://github.com/actions/checkout#Push-a-commit-using-the-built-in-token).\n\n```yml\non: push\njobs:\n  update:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - run: |\n          # Clear README.md\n          cat /dev/null > README.md\n\n          # Add Title\n          echo -e '# Today I Learned\\n' > README.md\n\n          # Loop through all TILs and add to README.md\n          dir=./learnings\n          for filename in \"$dir\"/*\n          do\n            title=$(head -n 1 $filename | sed 's/# //')\n            echo \"- [$title](https://github.com/petermekhaeil/til/blob/master/$filename)\" >> README.md\n          done\n\n          # Push changes\n          git config user.name github-actions\n          git config user.email github-actions@github.com\n          git add README.md\n          git commit -m \"Update README.md\"\n          git push\n```",
+    "date": "2022-04-16",
+    "path": "using-github-actions-to-push-changes.md",
+    "title": "Using GitHub Actions to push changes"
+  },
+  {
+    "content": "# Add features to your Netlify site with Snippet Injection\n\n[Netlify](https://netlify.com/) allows you to add code to your site at the CDN level by using a feature called [Snippet Injection](https://www.netlify.com/docs/inject-analytics-snippets/).\n\nSnippet injection is done without needing to update your code base, rebuilding or deploying your site. Anyone on your team can add scripts without being familar with the technologies used building the site.\n\nFrom your Netlify site dashboard, you will find Snippet Injection under to **Site settings** > **Build & deploy** > **Post processing**.\n\nSnippet Injection can come very useful for:\n - Adding analytics (eg Google Analytics)\n - Adding pixel tracking (eg Facebook Pixel)\n - [Adding Web Monetization](https://www.netlify.com/blog/2020/12/14/add-web-monetization-to-your-sites-with-snippet-injection/)\n\nSome fun examples of how snippet injection can be used:\n- [Adding elevator.js](https://www.netlify.com/blog/2021/12/20/how-to-add-features-to-your-site-via-snippet-injection/)\n- [Adding GitHub View Source ribbon](https://www.netlify.com/blog/2018/09/06/promoting-open-source-with-netlify-snippet-injection/)\n\nLearn more about [Snippet Injection](https://www.netlify.com/docs/inject-analytics-snippets/).",
+    "date": "2022-02-16",
+    "path": "add-features-to-your-netlify-site-with-snippet-injection.md",
+    "title": "Add features to your Netlify site with Snippet Injection"
+  },
+  {
+    "content": "# Enable HTTP/2 in Vite's Dev Server by using HTTPS\n\nTake advantage of [HTTP/2](https://developer.mozilla.org/en-US/docs/Glossary/HTTP_2) in Vite Dev Server by enabling `server.https` in your `vite.config.js`.\n\n```js\n{\n  server: {\n    https: true\n  }\n}\n```\n\nBrowsers limit the number of active connections per domain when using HTTP/1.1 and this can be avoided by enabling HTTP/2 which supports unlimited concurrent requests.\n\nVite's Dev server takes advantage of modern browser's support for [ES Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) and instead of bundling your site, the dev server will serve the modules via network requests in your browser. Enabling HTTP/2 can come handy in large applications that need to serve a lot of these modules.",
+    "date": "2022-02-12",
+    "path": "enable-http2-in-vites-dev-server-by-using-https.md",
+    "title": "Enable HTTP/2 in Vite's Dev Server by using HTTPS"
+  },
+  {
+    "content": "# Buttons can have a value like input elements\n\nThe `<button>` element can have a value like `<input>` and this value can also be passed to the server when the form is submitted:\n\n```html\n<form action=\"#\" method=\"POST\">\n  <input type=\"text\" name=\"name\" value=\"Peter\" />\n  <button type=\"submit\" name=\"_action\" value=\"add\">Add</button>\n  <button type=\"submit\" name=\"_action\" value=\"delete\">Delete</button>\n</form>\n```\n\nThe form can be submitted with this data without the need of JavaScript. On the server, you can check the value of `_action` to decide what to do next based on which button the user clicked to submit the form.\n\n\nIf you are submitting the form programmatically using JavaScript, `FormData` needs to know which button was used to submit the form:  \n\n```js\ndocument.querySelector(\"form\").addEventListener(\"submit\", (event) => {\n  event.preventDefault();\n\n  const formData = new FormData(event.target);\n\n  // The FormData does not know how the form was submitted. \n  // There could be more than one submit button on the form and\n  // we want to include the one that was used to submit the form. \n  // We append the button (also known as the submitter) to FormData.\n  // See more: https://developer.mozilla.org/en-US/docs/Web/API/SubmitEvent/submitter\n  if (event.submitter) {\n    formData.append(event.submitter.name, event.submitter.value);\n  }\n\n  const data = Object.fromEntries(formData.entries());\n  console.log(data); // {name: \"Peter\", _action: \"add\"}\n  \n  // When ready, submit the form programmatically\n});\n```\n\n[Remix](https://remix.run/) does a great job at using this technique - they demonstrate it in their video [Remix Single: Multiple Forms and Single Button Mutations](https://www.youtube.com/watch?v=w2i-9cYxSdc). The Remix implementation can be found [here](https://github.com/remix-run/remix/blob/db2c31f64affb2095e4286b91306b96435967969/packages/remix-react/components.tsx#L856).",
+    "date": "2022-01-28",
+    "path": "buttons-can-have-a-value-like-input-elements.md",
+    "title": "Buttons can have a value like input elements"
+  },
+  {
+    "content": "# The Idiomatic Text element\n\nThe HTML `i` element is named [the Idiomatic Text element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i) on [MDN Web Docs](https://developer.mozilla.org/en-US/docs/).\n\nThe [HTML specifications](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element) defines the `i` element as:\n\n> The `i` element represents a span of text in an alternate voice or mood, or otherwise offset from the normal prose in a manner indicating a different quality of text, such as a taxonomic designation, a technical term, an idiomatic phrase from another language, transliteration, a thought, or a ship name in Western texts.\n\nHistorically, the `i` element was used for presentation and browsers display it in italics. However, even though some browsers continue to display it in italics as a fallback, the `i` element should not be used for presentational purposes as it does not necessarily mean the text will be in italics.  \n\nThe `i` element has semantic meaning and the usage depends on the situation and the surrounding text. [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em#i_vs._em) has a great example:\n\n> An example for `<i>` could be: \"The _Queen Mary_ sailed last night\". Here, there is no added emphasis or importance on the word \"Queen Mary\". It is merely indicated that the object in question is not a queen named Mary, but a ship named _Queen Mary_. ",
+    "date": "2022-01-18",
+    "path": "the-idiomatic-text-element.md",
+    "title": "The Idiomatic Text element"
+  },
+  {
+    "content": "# Type declarations for a Vite app\n\nVite uses esbuild to transpile Typescript into Javascript and [esbuild does not do any type checking](https://esbuild.github.io/content-types/#typescript).\n\nTo generate type declarations, you can use `tsc`:\n\n```bash\ntsc --declaration --emitDeclarationOnly\n```\n\nIf you are building an application and want to check types only:\n\n```bash\ntsc --noEmit\n```\n\nExample `package.json`:\n\n```json\n{\n  \"name\": \"vite-app\",\n  \"version\": \"0.0.0\",\n  \"scripts\": {\n    \"build:types\": \"tsc --declaration --emitDeclarationOnly\"\n    \"check-types\": \"tsc --noEmit\"\n  },\n  \"devDependencies\": {\n    \"vite\": \"^2.7.2\",\n    \"typescript\": \"^4.0.3\"\n  }\n}\n```\n\nIt's nice to seperate the type checking from the build because:\n- Vite (esbuild) builds faster without it (by 20-30x).\n- It allows you to only generate type declarations when you need to (eg, preparing to package your app).",
+    "date": "2022-01-10",
+    "path": "type-declarations-for-a-vite-app.md",
+    "title": "Type declarations for a Vite app"
+  }
+]
