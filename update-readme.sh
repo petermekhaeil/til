@@ -10,7 +10,6 @@ echo -e 'This is a collection of short notes of the things I have learned on a d
 dir=./learnings
 til_array=()
 
-# Loop through all TILs and add to README.md
 for filename in "$dir"/*
 do
   git_timestamp=$(git log --format="format:%ci" --diff-filter=A -- $filename)
@@ -24,8 +23,23 @@ num_items=${#sorted_array[@]}
 
 echo -e "_**${num_items}** TILs and counting..._\n" >> README.md
 
+jq -n '[]' > feed.json
+
 for element in "${sorted_array[@]}"; do
     IFS=: read date filename <<< "$element"
     title=$(head -n 1 $filename | sed 's/# //')
+    path=$(basename $filename)
+    content=$(cat $filename)
+
+    jq \
+        --arg content "$content" \
+        --arg date "$date" \
+        --arg path "$path" \
+        --arg title "$title" \
+        '. += [{"content": $content, "date": $date, "path": $path, "title": $title}]' \
+        feed.json > feed.json.tmp
+
+    mv feed.json.tmp feed.json
+
     echo "- $date: [$title](https://github.com/petermekhaeil/til/blob/master/$filename)" >> README.md
 done
