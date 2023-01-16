@@ -4,13 +4,12 @@
 # Optional: Create new JSON file `feed.json` with empy array.
 jq -n '[]' > feed.json
 
-# Append an object to the array from `feed.json` and store the new JSON in `feed.json.tmp`
+# Append an object to the array from `feed.json` 
+# and store the new JSON in `feed.json.tmp`
 jq \
-    --arg content "$content" \
     --arg date "$date" \
-    --arg path "$path" \
     --arg title "$title" \
-    '. += [{"content": $content, "date": $date, "path": $path, "title": $title}]' \
+    '. += [{"date": $date, "title": $title}]' \
     feed.json > feed.json.tmp
 
 # Replace temp file with original file.
