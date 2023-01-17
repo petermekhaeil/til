@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Remove debugger statements in Vite\n\nWe can use esbuild's [drop](https://esbuild.github.io/api/#drop) option to remove `console` APIs and `debugger` statements from our code when we build our application.\n\n```js\nexport default defineConfig({\n    esbuild: {\n      drop: ['console', 'debugger']\n    }\n});\n```",
+    "date": "2023-01-17",
+    "path": "vite-remove-console-debugger.md",
+    "title": "Remove debugger statements in Vite"
+  },
+  {
     "content": "# Add an object to existing JSON using jq\n\n```bash\n# Optional: Create new JSON file `feed.json` with empy array.\njq -n '[]' > feed.json\n\n# Append an object to the array from `feed.json` \n# and store the new JSON in `feed.json.tmp`\njq \\\n    --arg date \"$date\" \\\n    --arg title \"$title\" \\\n    '. += [{\"date\": $date, \"title\": $title}]' \\\n    feed.json > feed.json.tmp\n\n# Replace temp file with original file.\nmv feed.json.tmp feed.json\n```\n\n- `--arg content \"$content\"` creates a variable `$content` to be used within the `jq` tool.\n- `'. += [{...}]' feed.json` appends a new object to the array from `feed.json`.\n- `> feed.json.tmp` is redirecting the output of `jq` into a temporarily file.\n- `mv feed.json.tmp feed.json` is replacing original file with the new temporarily file. Basically updating the original file with the new content.",
     "date": "2023-01-16",
     "path": "jq-append-json.md",
