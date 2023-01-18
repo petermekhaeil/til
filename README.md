@@ -2,8 +2,9 @@
 
 This is a collection of short notes of the things I have learned on a daily basis while working on different technologies. I share these notes as I [learn in public](https://www.learninpublic.org/).
 
-_**47** TILs and counting..._
+_**48** TILs and counting..._
 
+- 2023-01-18: [Checkout previous branch in Git](https://github.com/petermekhaeil/til/blob/master/./learnings/git-checkout-previous-branch.md)
 - 2023-01-17: [Remove debugger statements in Vite](https://github.com/petermekhaeil/til/blob/master/./learnings/vite-remove-console-debugger.md)
 - 2023-01-16: [Add an object to existing JSON using jq](https://github.com/petermekhaeil/til/blob/master/./learnings/jq-append-json.md)
 - 2023-01-15: [TypeScript Assertion Functions](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-assertion-functions.md)
