@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Delete files by modified date\n\n```bash\nfind ./my-folder -mtime +10 -type f -delete\n```\n\n- `-mtime +10`: Filter files that have a last modified date 10 days ago.\n- `-type f`: Filter files only.\n- `-delete`: Delete files matching the filters.",
+    "date": "2023-01-19",
+    "path": "delete-files-by-modified-date.md",
+    "title": "Delete files by modified date"
+  },
+  {
     "content": "# Checkout previous branch in Git\n\n- `git checkout -` is a shorthand for `git checkout @{-1}`. It will checkout the last previous branch.\n- `@{-1}` refers to the last branch that was checked. It can be used with `git checkout @{-1}` to checkout the previous branch.\n- You can also checkout the N-th last branch using `git checkout @{-N}`.",
     "date": "2023-01-18",
     "path": "git-checkout-previous-branch.md",
