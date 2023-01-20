@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Deep clone object with structuredClone()",
+    "date": "2023-01-20",
+    "path": "structured-clone.md",
+    "title": "Deep clone object with structuredClone()"
+  },
+  {
     "content": "# Delete files by modified date\n\n```bash\nfind ./my-folder -mtime +10 -type f -delete\n```\n\n- `-mtime +10`: Filter files that have a last modified date 10 days ago.\n- `-type f`: Filter files only.\n- `-delete`: Delete files matching the filters.",
     "date": "2023-01-19",
     "path": "delete-files-by-modified-date.md",

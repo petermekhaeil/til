@@ -2,8 +2,9 @@
 
 This is a collection of short notes of the things I have learned on a daily basis while working on different technologies. I share these notes as I [learn in public](https://www.learninpublic.org/).
 
-_**49** TILs and counting..._
+_**50** TILs and counting..._
 
+- 2023-01-20: [Deep clone object with structuredClone()](https://github.com/petermekhaeil/til/blob/master/./learnings/structured-clone.md)
 - 2023-01-19: [Delete files by modified date](https://github.com/petermekhaeil/til/blob/master/./learnings/delete-files-by-modified-date.md)
 - 2023-01-18: [Checkout previous branch in Git](https://github.com/petermekhaeil/til/blob/master/./learnings/git-checkout-previous-branch.md)
 - 2023-01-17: [Remove debugger statements in Vite](https://github.com/petermekhaeil/til/blob/master/./learnings/vite-remove-console-debugger.md)
