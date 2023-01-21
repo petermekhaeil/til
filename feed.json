@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Use pnpm's shell-emulator to replace cross-env ",
+    "date": "2023-01-21",
+    "path": "pnpm-shell-emulator.md",
+    "title": "Use pnpm's shell-emulator to replace cross-env "
+  },
+  {
     "content": "# Deep clone object with structuredClone()",
     "date": "2023-01-20",
     "path": "structured-clone.md",
