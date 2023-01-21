@@ -1,9 +1,9 @@
 [
   {
-    "content": "# Use pnpm's shell-emulator to replace cross-env ",
+    "content": "# Use pnpm's shell-emulator to execute scripts on all platforms\n\nWhen [`shell-emulator`](https://pnpm.io/cli/run#shell-emulator) is enabled, pnpm can use a JavaScript implementation of a bash-like shell to execute scripts. It is powered by [@yarnpkg/shell](https://github.com/yarnpkg/berry/tree/master/packages/yarnpkg-shell).\n\n```bash\n# .npmrc\nshell-emulator=true\n```\n\nIt means scripts like this will work across all platforms:\n\n```js\n\"scripts\": {\n  \"serve\": \"NODE_ENV=production node server\",\n}\n```\n\nIt replaces the need to use libraries like `cross-env`.\n\n## Learn More\n- [pnpm/pnpm#2881](https://github.com/pnpm/pnpm/pull/2881)\n- [@pnpm/npm-lifecycle](https://github.com/pnpm/npm-lifecycle/commit/4b1a3db1f36a44a49fe7e2dd52c0099124ebdba4)",
     "date": "2023-01-21",
     "path": "pnpm-shell-emulator.md",
-    "title": "Use pnpm's shell-emulator to replace cross-env "
+    "title": "Use pnpm's shell-emulator to execute scripts on all platforms"
   },
   {
     "content": "# Deep clone object with structuredClone()\n\n[structuredClone()](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone) is a native API in JavaScript that can do deep cloning of objects:\n\n```js\n\nconst original = {\n  name: \"Peter\",\n  properties: {\n    age: new Date()\n  }\n};\n\nconst copy = structuredClone(original);\n\ncopy.properties.action = \"Jump\";\noriginal.properties.action; // undefined\n```\n\nIt can handle circular references and other JS built-in types such as `Date`, `Set`, `Map`.\n\nLearn more on [MDN](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone).\n\n## What about object spread?\n\nThe object spread operator actually does a shallow copy. If you modify a deeply nested property, both objects are affected:\n\n```js\nconst original = {\n  name: \"Peter\",\n  properties: {\n    age: new Date()\n  }\n};\n\nconst copy = { ...original };\n\ncopy.properties.action = \"Jump\";\noriginal.properties.action; // \"Jump\"\n```",
