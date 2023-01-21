@@ -19,6 +19,8 @@ original.properties.action; // undefined
 
 It can handle circular references and other JS built-in types such as `Date`, `Set`, `Map`.
 
+Learn more on [MDN](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone).
+
 ## What about object spread?
 
 The object spread operator actually does a shallow copy. If you modify a deeply nested property, both objects are affected:
@@ -36,5 +38,3 @@ const copy = { ...original };
 copy.properties.action = "Jump";
 original.properties.action; // "Jump"
 ```
-
-Learn more on [MDN](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone).
