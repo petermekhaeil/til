@@ -6,7 +6,7 @@
     "title": "Use pnpm's shell-emulator to replace cross-env "
   },
   {
-    "content": "# Deep clone object with structuredClone()",
+    "content": "# Deep clone object with structuredClone()\n\n[structuredClone()](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone) is a native API in JavaScript that can do deep cloning of objects:\n\n```js\n\nconst original = {\n  name: \"Peter\",\n  properties: {\n    age: new Date()\n  }\n};\n\nconst copy = structuredClone(original);\n\ncopy.properties.action = \"Jump\";\noriginal.properties.action; // undefined\n```\n\nIt can handle circular references and other JS built-in types such as `Date`, `Set`, `Map`.\n\n## What about object spread?\n\nThe object spread operator actually does a shallow copy. If you modify a deeply nested property, both objects are affected:\n\n```js\nconst original = {\n  name: \"Peter\",\n  properties: {\n    age: new Date()\n  }\n};\n\nconst copy = { ...original };\n\ncopy.properties.action = \"Jump\";\noriginal.properties.action; // \"Jump\"\n```\n\nLearn more on [MDN](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone).",
     "date": "2023-01-20",
     "path": "structured-clone.md",
     "title": "Deep clone object with structuredClone()"
