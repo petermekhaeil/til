@@ -1,5 +1,11 @@
 [
   {
+    "content": "# TypeScript: Explicit type imports using importsNotUsedAsValues",
+    "date": "2023-01-22",
+    "path": "ts-importsNotUsedAsValues.md",
+    "title": "TypeScript: Explicit type imports using importsNotUsedAsValues"
+  },
+  {
     "content": "# Use pnpm's shell-emulator to execute scripts on all platforms\n\n[pnpm](https://pnpm.io/) can do cross-platform scripting when [shell-emulator](https://pnpm.io/cli/run#shell-emulator) is enabled.\n\n```bash\n# .npmrc\nshell-emulator=true\n```\n\nIt means scripts like this will work across all platforms:\n\n```js\n\"scripts\": {\n  \"serve\": \"NODE_ENV=production node server\"\n}\n```\n\nIt is powered by [@yarnpkg/shell](https://github.com/yarnpkg/berry/tree/master/packages/yarnpkg-shell) and it replaces the need to use libraries like `cross-env`.\n\n## Learn More\n- [shell-emulator](https://pnpm.io/cli/run#shell-emulator)\n- [pnpm/pnpm#2881](https://github.com/pnpm/pnpm/pull/2881)\n- [@pnpm/npm-lifecycle](https://github.com/pnpm/npm-lifecycle/commit/4b1a3db1f36a44a49fe7e2dd52c0099124ebdba4)",
     "date": "2023-01-21",
     "path": "pnpm-shell-emulator.md",
