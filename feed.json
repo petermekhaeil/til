@@ -1,9 +1,9 @@
 [
   {
-    "content": "# TypeScript: Explicit type imports using importsNotUsedAsValues",
+    "content": "# TypeScript: Type-only imports and exports\n\nTypeScript can enforce explicit type imports and exports using the [importsNotUsedAsValues](https://www.typescriptlang.org/tsconfig#importsNotUsedAsValues) configuration. \n\n```json\n{\n  \"compilerOptions\": {\n    \"importsNotUsedAsValues\": \"error\",\n  }\n}\n```\n\nSetting this to `error` will report an error if there is a type being imported without `import type` syntax.\n\n```ts\nimport type { MyType } from './types';\nexport type { MyType };\n```\n\nBundlers prefer this to help avoid potiential problems with types being incorrectly bundled.",
     "date": "2023-01-22",
-    "path": "ts-importsNotUsedAsValues.md",
-    "title": "TypeScript: Explicit type imports using importsNotUsedAsValues"
+    "path": "ts-imports-not-used-as-values.md",
+    "title": "TypeScript: Type-only imports and exports"
   },
   {
     "content": "# Use pnpm's shell-emulator to execute scripts on all platforms\n\n[pnpm](https://pnpm.io/) can do cross-platform scripting when [shell-emulator](https://pnpm.io/cli/run#shell-emulator) is enabled.\n\n```bash\n# .npmrc\nshell-emulator=true\n```\n\nIt means scripts like this will work across all platforms:\n\n```js\n\"scripts\": {\n  \"serve\": \"NODE_ENV=production node server\"\n}\n```\n\nIt is powered by [@yarnpkg/shell](https://github.com/yarnpkg/berry/tree/master/packages/yarnpkg-shell) and it replaces the need to use libraries like `cross-env`.\n\n## Learn More\n- [shell-emulator](https://pnpm.io/cli/run#shell-emulator)\n- [pnpm/pnpm#2881](https://github.com/pnpm/pnpm/pull/2881)\n- [@pnpm/npm-lifecycle](https://github.com/pnpm/npm-lifecycle/commit/4b1a3db1f36a44a49fe7e2dd52c0099124ebdba4)",

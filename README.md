@@ -4,7 +4,7 @@ This is a collection of short notes of the things I have learned on a daily basi
 
 _**52** TILs and counting..._
 
-- 2023-01-22: [TypeScript: Explicit type imports using importsNotUsedAsValues](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-importsNotUsedAsValues.md)
+- 2023-01-22: [TypeScript: Type-only imports and exports](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-imports-not-used-as-values.md)
 - 2023-01-21: [Use pnpm's shell-emulator to execute scripts on all platforms](https://github.com/petermekhaeil/til/blob/master/./learnings/pnpm-shell-emulator.md)
 - 2023-01-20: [Deep clone object with structuredClone()](https://github.com/petermekhaeil/til/blob/master/./learnings/structured-clone.md)
 - 2023-01-19: [Delete files by modified date](https://github.com/petermekhaeil/til/blob/master/./learnings/delete-files-by-modified-date.md)
