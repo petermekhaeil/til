@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Get current page URL in Astro\n\n[`Astro.url`](https://docs.astro.build/en/reference/api-reference/#astrourl) returns the current page URL from the Request object. The return value is a [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL) object which contains properties like pathname and origin. \n\n```js\nconst currentPath = Astro.url.pathname;\n```\n\nUseful when you need to highlight navigation links based on current page:\n\n```jsx\n<a href=\"/me\" class={currentPath === '/me' ? 'active' : ''}>\n  About Me\n</a>\n```",
+    "date": "2023-01-23",
+    "path": "astro-url.md",
+    "title": "Get current page URL in Astro"
+  },
+  {
     "content": "# TypeScript: Type-only imports and exports\n\nTypeScript can enforce explicit type imports and exports using the [importsNotUsedAsValues](https://www.typescriptlang.org/tsconfig#importsNotUsedAsValues) configuration. \n\n```json\n{\n  \"compilerOptions\": {\n    \"importsNotUsedAsValues\": \"error\",\n  }\n}\n```\n\nSetting this to `error` will report an error if there is a type being imported without `import type` syntax.\n\n```ts\nimport type { MyType } from './types';\nexport type { MyType };\n```\n\nBundlers prefer this to help avoid potiential problems with types being incorrectly bundled.",
     "date": "2023-01-22",
     "path": "ts-imports-not-used-as-values.md",
