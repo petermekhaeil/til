@@ -2,8 +2,9 @@
 
 This is a collection of short notes of the things I have learned on a daily basis while working on different technologies. I share these notes as I [learn in public](https://www.learninpublic.org/).
 
-_**53** TILs and counting..._
+_**54** TILs and counting..._
 
+- 2023-01-24: [TypeScript: Satisfies operator](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-satisfies.md)
 - 2023-01-23: [Get current page URL in Astro](https://github.com/petermekhaeil/til/blob/master/./learnings/astro-url.md)
 - 2023-01-22: [TypeScript: Type-only imports and exports](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-imports-not-used-as-values.md)
 - 2023-01-21: [Use pnpm's shell-emulator to execute scripts on all platforms](https://github.com/petermekhaeil/til/blob/master/./learnings/pnpm-shell-emulator.md)
