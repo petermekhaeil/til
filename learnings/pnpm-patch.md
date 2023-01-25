@@ -11,7 +11,7 @@ You can now edit the following folder: /tmp/5ea276f0eeb3585ea64ddf4b3b7ef377
 
 Once you've made the changes, you patch up the changes using [pnpm patch-commit](https://pnpm.io/cli/patch-commit):
 
-```
+```bash
 $ pnpm patch-commit /tmp/5ea276f0eeb3585ea64ddf4b3b7ef377
 ```
 
