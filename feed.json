@@ -66,7 +66,7 @@
     "title": "TypeScript Assertion Functions"
   },
   {
-    "content": "# CSS :is() pseudo-class",
+    "content": "# CSS :is() pseudo-class\n\nThe [:is](https://developer.mozilla.org/en-US/docs/Web/CSS/:is) pseudo-class takes a list of selectors and selects any elements that matches the selectors in that list. Its useful to compact large selectors. \n\nTake this example:\n\n```css\nheader h2,\nnav h2,\narticle h2 {\n  color: black;\n}\n```\n\nCan be written as:\n\n```css\nis:(header, nav, article) h2 {\n  color: black;\n}\n```\n\n## Learn More\n\nIt's worth noting there is a difference between `:is` and `:where()` when it comes to specificity value. Detailed explanations:\n\n- [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/:is)\n- [Simpler CSS Selectors With :is()](https://www.builder.io/blog/css-is)\n- [Using :is() in complex selectors selects more than you might initially think](https://www.bram.us/2023/01/17/using-is-in-complex-selectors-selects-more-than-you-might-initially-think/)",
     "date": "2023-01-14",
     "path": "css-is-pseudo-class.md",
     "title": "CSS :is() pseudo-class"
