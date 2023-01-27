@@ -1,9 +1,9 @@
 [
   {
-    "content": "# Pseudo-classes and pseudo-elements",
+    "content": "# CSS pseudo-classes and pseudo-elements\n\n[Pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) are states applied to the selected elements. They have a single colon (`:`).\n\n```css\nbutton:hover {\n  background: red;\n}\n```\n\n[Pseudo-elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements) selects specific parts of the selected elements. They have double colons (`::`).\n\n```css\np::first-line {\n  text-transform: uppercase;\n}\n```",
     "date": "2023-01-27",
-    "path": "css-pseudo-classes-pseudo-elements.md",
-    "title": "Pseudo-classes and pseudo-elements"
+    "path": "css-pseudo-classes-elements.md",
+    "title": "CSS pseudo-classes and pseudo-elements"
   },
   {
     "content": "# CSS ::first-letter pseudo-element\n\nCSS can be applied to the first letter of an element:\n\n```css\np::first-letter {\n  text-transform: uppercase;\n}\n```",

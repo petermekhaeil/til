@@ -4,7 +4,7 @@ This is a collection of short notes of the things I have learned on a daily basi
 
 _**57** TILs and counting..._
 
-- 2023-01-27: [Pseudo-classes and pseudo-elements](https://github.com/petermekhaeil/til/blob/master/./learnings/css-pseudo-classes-pseudo-elements.md)
+- 2023-01-27: [CSS pseudo-classes and pseudo-elements](https://github.com/petermekhaeil/til/blob/master/./learnings/css-pseudo-classes-elements.md)
 - 2023-01-26: [CSS ::first-letter pseudo-element](https://github.com/petermekhaeil/til/blob/master/./learnings/css-first-letter.md)
 - 2023-01-25: [Make changes to a dependency using pnpm patch](https://github.com/petermekhaeil/til/blob/master/./learnings/pnpm-patch.md)
 - 2023-01-24: [TypeScript: Satisfies operator](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-satisfies.md)
