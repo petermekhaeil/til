@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Pseudo-classes and pseudo-elements",
+    "date": "2023-01-27",
+    "path": "css-pseudo-classes-pseudo-elements.md",
+    "title": "Pseudo-classes and pseudo-elements"
+  },
+  {
     "content": "# CSS ::first-letter pseudo-element\n\nCSS can be applied to the first letter of an element:\n\n```css\np::first-letter {\n  text-transform: uppercase;\n}\n```",
     "date": "2023-01-26",
     "path": "css-first-letter.md",
