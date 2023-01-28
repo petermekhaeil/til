@@ -1,5 +1,11 @@
 [
   {
+    "content": " # npm using latest version of package\n \n If you want to use the latest version of a package when using `npm create`, you need to specify `latest` as the package version.\n  \n It's why most tools will have instructions like below. It's to force npm to install the latest version of the package:\n \n ```bash\n$ npx create-remix@latest\n$ npm create svelte@latest\n$ npx create-next-app@latest\n```\n\nThe above will fetch the latest versions from the registry and execute the script.\n\nIf you do not specify a version and have previously installed the package, npm will use that previously installed version.\n\nThe same goes with the other npm commands like `npm init`, `npm exec`, `npx`.",
+    "date": "2023-01-28",
+    "path": "npm-latest.md",
+    "title": " npm using latest version of package"
+  },
+  {
     "content": "# CSS pseudo-classes and pseudo-elements\n\n[Pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) are states applied to the selected elements. They have a single colon (`:`).\n\n```css\nbutton:hover {\n  background: red;\n}\n```\n\n[Pseudo-elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements) selects specific parts of the selected elements. They have double colons (`::`).\n\n```css\np::first-line {\n  text-transform: uppercase;\n}\n```",
     "date": "2023-01-27",
     "path": "css-pseudo-classes-elements.md",
