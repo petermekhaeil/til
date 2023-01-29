@@ -47,7 +47,7 @@ The `>>` operator is used to append to a file (or create the file if it does not
 
 [actions/checkout](https://github.com/actions/checkout) is an offical GitHub Action that can checkout a repository. We can also use this to [push changes back](https://github.com/actions/checkout#Push-a-commit-using-the-built-in-token).
 
-```yml
+```yaml
 on: push
 jobs:
   update:
