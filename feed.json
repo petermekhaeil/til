@@ -186,7 +186,7 @@
     "title": "Git Remove All Commits"
   },
   {
-    "content": "# Using Nunjucks Macros in Eleventy\n\nNunjucks macros allows you to define reusable UI components that can be imported in your Eleventy pages when using the Nunjucks templating language:\n\n```jinja\n{%- macro button(params) -%}\n  <button type=\"{{ params.type }}\">{{ params.text }}</button>\n{%- endmacro -%}\n```\n\nImporting the macro in your page by referencing the filename and the macro name:\n\n```jinja\n{%- from \"button.macro.njk\" import button -%}\n\n{{ button({ type: \"button\", text: \"Click Me\" }) }}\n```",
+    "content": "# Using Nunjucks Macros in Eleventy\n\nNunjucks macros allows you to define reusable UI components that can be imported in your Eleventy pages when using the Nunjucks templating language:\n\n```\n{%- macro button(params) -%}\n  <button type=\"{{ params.type }}\">{{ params.text }}</button>\n{%- endmacro -%}\n```\n\nImporting the macro in your page by referencing the filename and the macro name:\n\n```\n{%- from \"button.macro.njk\" import button -%}\n\n{{ button({ type: \"button\", text: \"Click Me\" }) }}\n```",
     "date": "2022-11-02",
     "path": "nunjucks-macro-eleventy.md",
     "title": "Using Nunjucks Macros in Eleventy"
