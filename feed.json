@@ -1,5 +1,11 @@
 [
   {
+    "content": "# npm disable audit in .npmrc\n\nSet `audit` to false in `.npmrc` to disable the audit reports when doing npm installs.\n\n```ini\naudit=false\n```",
+    "date": "2023-01-29",
+    "path": "npm-audit.md",
+    "title": "npm disable audit in .npmrc"
+  },
+  {
     "content": " # npm using latest version of package\n \n If you want to use the latest version of a package when using `npm create`, you need to specify `latest` as the package version.\n  \n It's why most tools will have instructions like below. It's to force npm to install the latest version of the package:\n \n ```bash\n$ npx create-remix@latest\n$ npm create svelte@latest\n$ npx create-next-app@latest\n```\n\nThe above will fetch the latest versions from the registry and execute the script.\n\nIf you do not specify a version and have previously installed the package, npm will use that previously installed version.\n\nThe same goes with the other npm commands like `npm init`, `npm exec`, `npx`.",
     "date": "2023-01-28",
     "path": "npm-latest.md",

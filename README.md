@@ -2,8 +2,9 @@
 
 This is a collection of short notes of the things I have learned on a daily basis while working on different technologies. I share these notes as I [learn in public](https://www.learninpublic.org/).
 
-_**58** TILs and counting..._
+_**59** TILs and counting..._
 
+- 2023-01-29: [npm disable audit in .npmrc](https://github.com/petermekhaeil/til/blob/master/./learnings/npm-audit.md)
 - 2023-01-28: [ npm using latest version of package](https://github.com/petermekhaeil/til/blob/master/./learnings/npm-latest.md)
 - 2023-01-27: [CSS pseudo-classes and pseudo-elements](https://github.com/petermekhaeil/til/blob/master/./learnings/css-pseudo-classes-elements.md)
 - 2023-01-26: [CSS ::first-letter pseudo-element](https://github.com/petermekhaeil/til/blob/master/./learnings/css-first-letter.md)
