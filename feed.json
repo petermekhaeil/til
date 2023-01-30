@@ -1,5 +1,11 @@
 [
   {
+    "content": "# X-Robots-Tag\n\nThe HTTP Header `X-Robots-Tag` is used to instruct search engines on how it should handle indexing the page. It takes in any rule that can be specified in the robots `meta` tag (`<meta name=\"robots\" content=\"noindex\">`).\n\nThere is a whole list of values that can be used: [https://http.dev/x-robots-tag](https://http.dev/x-robots-tag).\n\nI noticed it being used on Netlify preview URLs ([example](https://63d7d47fe551c0248a252eb7--petermekhaeil.netlify.app)):\n\n```\nX-Robots-Tag: noindex \n```\n\nWhich makes sense because these are draft URLs that should not be indexed.",
+    "date": "2023-01-30",
+    "path": "x-robots-tag.md",
+    "title": "X-Robots-Tag"
+  },
+  {
     "content": "# npm disable audit in .npmrc\n\nnpm can get noisy during installs with the [audit](https://docs.npmjs.com/cli/v6/commands/npm-audit) report:\n\n```bash\n1 vulnerabilities (0 moderate, 1 high)\n\nTo address issues that do not require attention, run:\n  npm audit fix\n\nTo address all issues (including breaking changes), run:\n  npm audit fix --force\n```\n\n[Dan Abramov](https://twitter.com/dan_abramov) has a great write-up on why [npm audit is broken by design](https://overreacted.io/npm-audit-broken-by-design/) - it is worth the read.\n\nYou can disable the audit for all npm commands using `.npmrc`:\n\n```ini\naudit=false\nloglevel=silent\n```",
     "date": "2023-01-29",
     "path": "npm-audit.md",
