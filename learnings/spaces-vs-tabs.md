@@ -8,7 +8,6 @@ I never got involved in spaces vs tabs debates throughout my career. But the top
 - [Prettier](https://prettier.io/) is considering making tabs the default in 3.0. Mentioned in [Issue #7475](https://github.com/prettier/prettier/issues/7475).
 - [MarcoSehe](https://github.com/MarcoZehe) comments on [PR #170](https://github.com/prettier/prettier/issues/7475#issuecomment-668544890) the impact that spaces have on Braille displays.
 - [Nobody talks about the real reason to use Tabs over Spaces](https://www.reddit.com/r/javascript/comments/c8drjo/nobody_talks_about_the_real_reason_to_use_tabs/)
-- [Why tabs are clearly superior](https://lea.verou.me/2012/01/why-tabs-are-clearly-superior/)
 
 ## What I learned
 
