@@ -2,8 +2,9 @@
 
 This is a collection of short notes of the things I have learned on a daily basis while working on different technologies. I share these notes as I [learn in public](https://www.learninpublic.org/).
 
-_**61** TILs and counting..._
+_**62** TILs and counting..._
 
+- 2023-02-01: [import.meta](https://github.com/petermekhaeil/til/blob/master/./learnings/import-meta.md)
 - 2023-01-31: [Spaces vs tabs: It's an accessibility issue](https://github.com/petermekhaeil/til/blob/master/./learnings/spaces-vs-tabs.md)
 - 2023-01-30: [X-Robots-Tag](https://github.com/petermekhaeil/til/blob/master/./learnings/x-robots-tag.md)
 - 2023-01-29: [npm disable audit in .npmrc](https://github.com/petermekhaeil/til/blob/master/./learnings/npm-audit.md)
