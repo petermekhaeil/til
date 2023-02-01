@@ -33,4 +33,4 @@ import.meta.myVariable; // string
 
 [Vite](https://vitejs.dev) extend `import.meta` to add things like:
 - [Env Variables](https://vitejs.dev/guide/env-and-mode.html#env-variables-and-modes): `import.meta.env`.
-- [Glob Import As](https://vitejs.dev/guide/features.html#glob-import-as): `import.meta.glob`
+- [Glob Import](https://vitejs.dev/guide/features.html#glob-import-as): `import.meta.glob`
