@@ -1,5 +1,11 @@
 [
   {
+    "content": "# No browser cache with self-signed certificates\n\nIf there is a certificate error, Chromium based browsers will not cache responses and will treat a self-signed certificate as a certificate error.\n\nSee [https://bugs.chromium.org/p/chromium/issues/detail?id=110649#c8](https://bugs.chromium.org/p/chromium/issues/detail?id=110649#c8).\n\n[Mkcert](https://github.com/FiloSottile/mkcert) can create a locally-trusted development certificate for your dev servers to prevent this from happening.",
+    "date": "2023-02-02",
+    "path": "chrome-certificates.md",
+    "title": "No browser cache with self-signed certificates"
+  },
+  {
     "content": "# import.meta\n\n[import.meta](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import.meta) is an object that is available within Javascript ES modules. It contains metadata about the module and is extensible.\n\nIt contains `import.meta.url` that returns the full URL of the module.\n\n```html\n<script type=\"module\" src=\"module.mjs\"></script>\n```\n\n```js\n// module.mjs\nlet img = document.createElement('img');\nimg.src = new URL('image.jpg', import.meta.url);\ndocument.body.appendChild(img);\n```\n\n## Difference from process.env\n\n`process.env` is specific to Node and cannot be used in the browser.\n\n## TypeScript support\n\n```ts\ninterface ImportMeta {\n  myVariable: string\n}\n\nimport.meta.myVariable; // string\n```\n\n## Uses\n\n[Vite](https://vitejs.dev) extend `import.meta` to add things like:\n- [Env Variables](https://vitejs.dev/guide/env-and-mode.html#env-variables-and-modes): `import.meta.env`.\n- [Glob Import](https://vitejs.dev/guide/features.html#glob-import-as): `import.meta.glob`",
     "date": "2023-02-01",
     "path": "import-meta.md",
