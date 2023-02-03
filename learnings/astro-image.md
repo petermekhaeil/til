@@ -6,7 +6,7 @@ Astro's `<Image />` component can render optimised images. It can be used on loc
 import { Image } from '@astrojs/image/components';
 ```
 
-The required props are the real gotchas:
+The required props:
 
 | Image Type                  | Props                                 |
 | --------------------------- | ------------------------------------- |
@@ -14,12 +14,11 @@ The required props are the real gotchas:
 | Remote images               | `src`, `alt`, `format` and dimensions |
 | Local images in `public/` | `src`, `alt`, `format` and dimensions |
 
-Local images in `public/` are considered remote images.
+- Local images in `public/` are considered remote images.
+- The `<Image />` component does not know the dimensions or the format of the remote images, which is why they must be provided.
 
 ## Dimensions
 
-The `<Image />` component does not know the dimensions or the format of the remote images.
-
 You will need provide either:
 - `width` _and_ `height`, or
-- `width` or `height` _and_ an as `aspectRatio` (to avoid layout shift).
+- `width` or `height` _and_ an `aspectRatio` (to avoid layout shift).
