@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Astro's image integration\n\nAstro's `<Image />` component can render optimised images. It can be used on local images and remote images.\n\n```tsx\nimport { Image } from '@astrojs/image/components';\n```\n\nThe required props are the real gotchas:\n\n| Image Type                  | Props                                 |\n| --------------------------- | ------------------------------------- |\n| Local images in `src/`    | `src`, `alt`                          |\n| Remote images               | `src`, `alt`, `format` and dimensions |\n| Local images in `public/` | `src`, `alt`, `format` and dimensions |\n\nLocal images in `public/` are considered remote images.\n\n## Dimensions\n\nThe `<Image />` component does not know the dimensions or the format of the remote images.\n\nYou will need provide either:\n- `width` _and_ `height`, or\n- `width` or `height` _and_ an as `aspectRatio` (to avoid layout shift).",
+    "date": "2023-02-03",
+    "path": "astro-image.md",
+    "title": "Astro's image integration"
+  },
+  {
     "content": "# No browser cache with self-signed certificates\n\nIf there is a certificate error, Chromium based browsers will not cache responses and will treat a self-signed certificate as a certificate error.\n\nSee [https://bugs.chromium.org/p/chromium/issues/detail?id=110649#c8](https://bugs.chromium.org/p/chromium/issues/detail?id=110649#c8).\n\n[Mkcert](https://github.com/FiloSottile/mkcert) can create a locally-trusted development certificate for your dev servers to prevent this from happening.",
     "date": "2023-02-02",
     "path": "chrome-certificates.md",

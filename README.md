@@ -2,8 +2,9 @@
 
 This is a collection of short notes of the things I have learned on a daily basis while working on different technologies. I share these notes as I [learn in public](https://www.learninpublic.org/).
 
-_**63** TILs and counting..._
+_**64** TILs and counting..._
 
+- 2023-02-03: [Astro's image integration](https://github.com/petermekhaeil/til/blob/master/./learnings/astro-image.md)
 - 2023-02-02: [No browser cache with self-signed certificates](https://github.com/petermekhaeil/til/blob/master/./learnings/chrome-certificates.md)
 - 2023-02-01: [import.meta](https://github.com/petermekhaeil/til/blob/master/./learnings/import-meta.md)
 - 2023-01-31: [Spaces vs tabs: It's an accessibility issue](https://github.com/petermekhaeil/til/blob/master/./learnings/spaces-vs-tabs.md)
