@@ -4,7 +4,7 @@ This is a collection of short notes of the things I have learned on a daily basi
 
 _**65** TILs and counting..._
 
-- 2023-02-04: [setTimeout(): Node vs Web](https://github.com/petermekhaeil/til/blob/master/./learnings/settimeout-node-vs-web.md)
+- 2023-02-04: [setTimeout(): Node.js vs Web](https://github.com/petermekhaeil/til/blob/master/./learnings/settimeout-node-vs-web.md)
 - 2023-02-03: [Astro's image integration](https://github.com/petermekhaeil/til/blob/master/./learnings/astro-image.md)
 - 2023-02-02: [No browser cache with self-signed certificates](https://github.com/petermekhaeil/til/blob/master/./learnings/chrome-certificates.md)
 - 2023-02-01: [import.meta](https://github.com/petermekhaeil/til/blob/master/./learnings/import-meta.md)
