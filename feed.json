@@ -1,5 +1,11 @@
 [
   {
+    "content": "# setTimeout(): Node vs Web",
+    "date": "2023-02-04",
+    "path": "settimeout-node-vs-web.md",
+    "title": "setTimeout(): Node vs Web"
+  },
+  {
     "content": "# Astro's image integration\n\nAstro's `<Image />` component can render optimised images. It can be used on local images and remote images.\n\n```tsx\nimport { Image } from '@astrojs/image/components';\n```\n\nThe required props:\n\n| Image Type                  | Props                                 |\n| --------------------------- | ------------------------------------- |\n| Local images in `src/`    | `src`, `alt`                          |\n| Remote images               | `src`, `alt`, `format` and dimensions |\n| Local images in `public/` | `src`, `alt`, `format` and dimensions |\n\n- Local images in `public/` are considered remote images.\n- The `<Image />` component does not know the dimensions or the format of the remote images, which is why they must be provided.\n\n## Dimensions\n\nYou will need provide either:\n- `width` _and_ `height`, or\n- `width` or `height` _and_ an `aspectRatio` (to avoid layout shift).",
     "date": "2023-02-03",
     "path": "astro-image.md",
