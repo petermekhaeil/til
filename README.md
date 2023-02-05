@@ -2,8 +2,9 @@
 
 This is a collection of short notes of the things I have learned on a daily basis while working on different technologies. I share these notes as I [learn in public](https://www.learninpublic.org/).
 
-_**65** TILs and counting..._
+_**66** TILs and counting..._
 
+- 2023-02-05: [React unmountComponentAtNode()](https://github.com/petermekhaeil/til/blob/master/./learnings/react-unmount-component-at-node.md)
 - 2023-02-04: [setTimeout(): Node.js vs Web](https://github.com/petermekhaeil/til/blob/master/./learnings/settimeout-node-vs-web.md)
 - 2023-02-03: [Astro's image integration](https://github.com/petermekhaeil/til/blob/master/./learnings/astro-image.md)
 - 2023-02-02: [No browser cache with self-signed certificates](https://github.com/petermekhaeil/til/blob/master/./learnings/chrome-certificates.md)
