@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Using Promise.race() to implement request timeout\n\n[Promise.race()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race) takes a list of promises and returns the first promise that settles (regardless if fulfilled or rejected).\n\nGood use to implement a request timeout. It resolves the first promise that settles which will either be the fetch request or the timeout promise.\n\n```tsx\nconst fetchApi = async () => {\n  const res = await fetch(\"/api\");\n  return await res.json();\n};\n\nconst requestTimeout = (delay: number) => {\n  return new Promise((resolve, reject) => {\n    setTimeout(() => reject(new Error(\"Timeout\")), delay);\n  });\n};\n\nconst data = Promise.race([fetchApi, requestTimeout(5000)]);\n```",
+    "date": "2023-02-06",
+    "path": "js-promise-race.md",
+    "title": "Using Promise.race() to implement request timeout"
+  },
+  {
     "content": "# Remove React app from the DOM\n\nUse [ReactDOM.unmountComponentAtNode()](https://beta.reactjs.org/reference/react-dom/unmountComponentAtNode#unmountcomponentatnode) (React < 18) or [root.unmount()](https://beta.reactjs.org/reference/react-dom/client/createRoot#root-unmount) to remove a React app from the DOM.\n\n```js\nimport ReactDOM from 'react-dom';\n\nconst domNode = document.getElementById('root');\nReactDOM.render(<App />, domNode);\n\nReactDOM.unmountComponentAtNode(domNode);\n```\n\n```js\nimport { createRoot } from 'react-dom/client';\n\nconst domNode = document.getElementById('root');\nconst root = createRoot(domNode);\n\nroot.render(<App />);\n\nroot.unmount();\n```",
     "date": "2023-02-05",
     "path": "react-unmount-component-at-node.md",
