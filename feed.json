@@ -1,9 +1,9 @@
 [
   {
-    "content": "# React unmountComponentAtNode()",
+    "content": "# Remove React app from the DOM\n\nUse [ReactDOM.unmountComponentAtNode()](https://beta.reactjs.org/reference/react-dom/unmountComponentAtNode#unmountcomponentatnode) (React < 18) or [root.unmount()](https://beta.reactjs.org/reference/react-dom/client/createRoot#root-unmount) to remove a React app from the DOM.\n\n```js\nimport ReactDOM from 'react-dom';\n\nconst domNode = document.getElementById('root');\nReactDOM.render(<App />, domNode);\n\nReactDOM.unmountComponentAtNode(domNode);\n```\n\n```js\nimport { createRoot } from 'react-dom/client';\n\nconst domNode = document.getElementById('root');\nconst root = createRoot(domNode);\n\nroot.render(<App />);\n\nroot.unmount();\n```",
     "date": "2023-02-05",
     "path": "react-unmount-component-at-node.md",
-    "title": "React unmountComponentAtNode()"
+    "title": "Remove React app from the DOM"
   },
   {
     "content": "# setTimeout(): Node.js vs Web\n\n- In Node.js, [setTimeout()](https://nodejs.org/dist/latest-v18.x/docs/api/timers.html#settimeoutcallback-delay-args) returns a [\\<Timeout\\>](https://nodejs.org/dist/latest-v18.x/docs/api/timers.html#class-timeout) object.\n- In web, [setTimeout()](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout) returns a number (`timeoutID`).\n\nBoth return values are passed to `clearTimeout()` to cancel the timeout.",
