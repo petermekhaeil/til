@@ -7,7 +7,9 @@ Here is an example adding a custom config called `endpointName`:
 ```tsx
 const instance = axios.create();
 
-const { data } = await instance.get("/api", { endpointName: "myApi" });
+const { data } = await instance.get("/api", { 
+  endpointName: "myApi"
+});
 ```
 
 It can be used in [interceptors](https://axios-http.com/docs/interceptors):
