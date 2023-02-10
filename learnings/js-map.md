@@ -15,7 +15,7 @@ myPokemons.delete(bulbasaur.id);
 
 ```tsx
 for (const [key, value] of myPokemons) {
-  ...
+  // ...
 }
 ```
 
@@ -38,7 +38,7 @@ myPokemons.values();
 const clonedPokemons = new Map(myPokemons);
 
 // deep cloning
-const deepClone = structuredClone(myPokemons)
+const deepClone = structuredClone(myPokemons);
 ```
 
 ## Converting to objects
@@ -50,13 +50,13 @@ const myObj = Object.fromEntries(myMap);
 ## Converting to Map
 
 ```tsx
-const myMap = new Map(Object.entries(myObj))
+const myMap = new Map(Object.entries(myObj));
 ```
 
 ## Use any type of object as keys
 
 ```tsx
-myMap.set(document.body, value)
-myMap.set(function() {}, value)
-myMap.set(myPokemon, value)
+myMap.set(document.body, value);
+myMap.set(function() {}, value);
+myMap.set(myPokemon, value);
 ```
