@@ -1,5 +1,11 @@
 [
   {
+    "content": "# JavaScript Map",
+    "date": "2023-02-10",
+    "path": "js-map.md",
+    "title": "JavaScript Map"
+  },
+  {
     "content": "# Cypress cy.clock()\n\n[cy.clock()](https://docs.cypress.io/api/commands/clock) allows you to control time in your Cypress test:\n\n```js\ncy.clock();\ncy.intercept('GET', '/pokemon').as('pokemon');\n// 1st call\ncy.wait('@pokemon');\n\n// forward 10 seconds and wait for next `/pokemon` request\ncy.tick(10_000);\ncy.wait('@pokemon');\n```",
     "date": "2023-02-09",
     "path": "cypress-clock.md",
