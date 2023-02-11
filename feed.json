@@ -1,5 +1,11 @@
 [
   {
+    "content": "# JavaScript WeapMap\n\n[WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap) have \"weak\" reference to its keys. When the references to the key is lost and there are more references to the value, the value can be garbage collected.\n\n```tsx\nconst pokemon = { name: \"Pikachu\" };\n\nconst myPokemons = new WeakMap();\nmyPokemons.set(pokemon, 1);\n\n// reference removed\npokemon = null;\n\n// pokemon is removed from memory\nmyPokemons.has(pokemon); // false\n```\n\n## Map vs WeakMap\n\n- **WeakMap** keys must be objects and cannot be primitives.\n- If an object is used in a **Map**, as long as the Map exists, so does that the object.\n- **WeakMap** does not have interation methods (`keys()`, `values()`, `entries()`).\n- You cannot check the size of a **WeakMap**.",
+    "date": "2023-02-11",
+    "path": "js-weakmap.md",
+    "title": "JavaScript WeapMap"
+  },
+  {
     "content": "# JavaScript Map\n\nA much cleaner and performant alternative to objects.\n\n```tsx\nconst myPokemons = new Map();\n\nconst bulbasaur = { id: 1, name: \"Bulbasaur\" };\n\nmyPokemons.set(bulbasaur.id, bulbasaur);\nmyPokemons.delete(bulbasaur.id);\n```\n\n## Iterating\n\n```tsx\nfor (const [key, value] of myPokemons) {\n  // ...\n}\n```\n\n- Cleaner to iterate compared to objects.\n- Iterates in the order of entry insertion.\n\n## Iterators \n\n```tsx\n// Iterator of all map keys\nmyPokemons.keys();\n\n// Iterator of all map values\nmyPokemons.values();\n```\n\n## Cloning\n\n```tsx\nconst clonedPokemons = new Map(myPokemons);\n\n// deep cloning\nconst deepClone = structuredClone(myPokemons);\n```\n\n## Converting to objects\n\n```tsx\nconst myObj = Object.fromEntries(myMap);\n```\n\n## Converting to Map\n\n```tsx\nconst myMap = new Map(Object.entries(myObj));\n```\n\n## Use any type of object as keys\n\n```tsx\nmyMap.set(document.body, value);\nmyMap.set(function() {}, value);\nmyMap.set(myPokemon, value);\n```",
     "date": "2023-02-10",
     "path": "js-map.md",

@@ -2,8 +2,9 @@
 
 This is a collection of short notes of the things I have learned on a daily basis while working on different technologies. I share these notes as I [learn in public](https://www.learninpublic.org/).
 
-_**71** TILs and counting..._
+_**72** TILs and counting..._
 
+- 2023-02-11: [JavaScript WeapMap](https://github.com/petermekhaeil/til/blob/master/./learnings/js-weakmap.md)
 - 2023-02-10: [JavaScript Map](https://github.com/petermekhaeil/til/blob/master/./learnings/js-map.md)
 - 2023-02-09: [Cypress cy.clock()](https://github.com/petermekhaeil/til/blob/master/./learnings/cypress-clock.md)
 - 2023-02-08: [Add custom config to Axios requests](https://github.com/petermekhaeil/til/blob/master/./learnings/axios-interceptors.md)
