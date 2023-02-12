@@ -1,5 +1,11 @@
 [
   {
+    "content": "# JSON.parse reviver parameter\n\n[JSON.parse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) has an optional `reviver` parameter that can transform the value being parsed.\n\nThis is useful for deserialization:\n\n```js\nconst jsonString = '{\"date\":\"Sun, 12 Feb 2023 06:45:00 GMT\"}';\n\nfunction reviver(key, value) {\n  if (key === \"date\") {\n    return new Date(value);\n  }\n  return value;\n}\n\nconst data = JSON.parse(jsonString, reviver);\n    // ^? { date: Date }\n```\n\nJSON.parse's `reviver` and JSON.stringify's `replacer` can be combined together to build a JSON serialization and deserialization utility.",
+    "date": "2023-02-12",
+    "path": "json-parse-reviver-parameter.md",
+    "title": "JSON.parse reviver parameter"
+  },
+  {
     "content": "# JavaScript WeapMap\n\n[WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap) have \"weak\" reference to its keys. When the references to the key is lost and there are more references to the value, the value can be garbage collected.\n\n```tsx\nconst pokemon = { name: \"Pikachu\" };\n\nconst myPokemons = new WeakMap();\nmyPokemons.set(pokemon, 1);\n\n// reference removed\npokemon = null;\n\n// pokemon is removed from memory\nmyPokemons.has(pokemon); // false\n```\n\n## Map vs WeakMap\n\n- **WeakMap** keys must be objects and cannot be primitives.\n- If an object is used in a **Map**, as long as the Map exists, so does that the object.\n- **WeakMap** does not have interation methods (`keys()`, `values()`, `entries()`).\n- You cannot check the size of a **WeakMap**.",
     "date": "2023-02-11",
     "path": "js-weakmap.md",
