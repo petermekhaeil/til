@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Show data about an npm package using npm view\n \n[npm view](https://docs.npmjs.com/cli/v7/commands/npm-view/) outputs data about an npm package:\n \n\n```bash\n $ npm view zod\n```\n \nOutput:\n \n```bash\nzod@3.20.6 | MIT | deps: none | versions: 254\nTypeScript-first schema declaration and validation library with static type inference\nhttps://zod.dev\n\nkeywords: typescript, schema, validation, type, inference\n\ndist\n.tarball: https://registry.npmjs.org/zod/-/zod-3.20.6.tgz\n.shasum: 2f2f08ff81291d47d99e86140fedb4e0db08361a\n.integrity: sha512-oyu0m54SGCtzh6EClBVqDDlAYRz4jrVtKwQ7ZnsEmMI9HnzuZFj8QFwAY1M5uniIYACdGvv0PBWPF2kO0aNofA==\n.unpackedSize: 567.1 kB\n\nmaintainers:\n- colinmcd94 <colin@colinhacks.com>\n- vriad <colin@vriad.com>\n\ndist-tags:\nalpha: 3.0.0-alpha.29  beta: 3.20.4-beta.0    canary: 1.10.2-canary  latest: 3.20.6         next: 3.8.2-alpha.6    \n\npublished 4 days ago by colinmcd94 <colin@colinhacks.com>\n```",
+    "date": "2023-02-13",
+    "path": "npm-view.md",
+    "title": "Show data about an npm package using npm view"
+  },
+  {
     "content": "# JSON.parse reviver parameter\n\n[JSON.parse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) has an optional `reviver` parameter that can transform the value being parsed.\n\nThis is useful for deserialization:\n\n```js\nconst jsonString = '{\"date\":\"Sun, 12 Feb 2023 06:45:00 GMT\"}';\n\nfunction reviver(key, value) {\n  if (key === \"date\") {\n    return new Date(value);\n  }\n  return value;\n}\n\nconst data = JSON.parse(jsonString, reviver);\n    // ^? { date: Date }\n```\n\nJSON.parse's `reviver` and JSON.stringify's `replacer` can be combined together to build a JSON serialization and deserialization utility.",
     "date": "2023-02-12",
     "path": "json-parse-reviver-parameter.md",
