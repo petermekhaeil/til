@@ -1,5 +1,11 @@
 [
   {
+    "content": "# TypeScript: Callable interface\n\nAdding an interface for callable objects:\n\n```tsx\ninterface Callable {\n  (): string;\n}\n\nconst myCallable: Callable = function () {\n  return \"I was called\";\n};\n\nconst myFunction = myCallable;\nconst value = myFunction();\n    // ^? const value: string\n```\n\nAnother example with parameters:\n\n```tsx\ninterface Callable {\n  (numOne: number, numTwo: number): number;\n}\n\nconst addNumbers: Callable = function (numOne, numTwo) {\n  return numOne + numTwo;\n};\n\nconst myFunction = addNumbers;\nconst value = myFunction(1, 2);\n    // ^? const value: number\n```",
+    "date": "2023-02-14",
+    "path": "ts-callable.md",
+    "title": "TypeScript: Callable interface"
+  },
+  {
     "content": "# Show data about an npm package using npm view\n \n[npm view](https://docs.npmjs.com/cli/v7/commands/npm-view/) outputs data about an npm package:\n \n\n```bash\n $ npm view zod\n```\n \nOutput:\n \n```bash\nzod@3.20.6 | MIT | deps: none | versions: 254\nTypeScript-first schema declaration and validation library with static type inference\nhttps://zod.dev\n\nkeywords: typescript, schema, validation, type, inference\n\ndist\n.tarball: https://registry.npmjs.org/zod/-/zod-3.20.6.tgz\n.shasum: 2f2f08ff81291d47d99e86140fedb4e0db08361a\n.integrity: sha512-oyu0m54SGCtzh6EClBVqDDlAYRz4jrVtKwQ7ZnsEmMI9HnzuZFj8QFwAY1M5uniIYACdGvv0PBWPF2kO0aNofA==\n.unpackedSize: 567.1 kB\n\nmaintainers:\n- colinmcd94 <colin@colinhacks.com>\n- vriad <colin@vriad.com>\n\ndist-tags:\nalpha: 3.0.0-alpha.29  beta: 3.20.4-beta.0    canary: 1.10.2-canary  latest: 3.20.6         next: 3.8.2-alpha.6    \n\npublished 4 days ago by colinmcd94 <colin@colinhacks.com>\n```",
     "date": "2023-02-13",
     "path": "npm-view.md",
