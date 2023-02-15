@@ -1,5 +1,11 @@
 [
   {
+    "content": "# JavaScript Import Map",
+    "date": "2023-02-15",
+    "path": "js-import-map.md",
+    "title": "JavaScript Import Map"
+  },
+  {
     "content": "# TypeScript: Callable interface\n\nAdding an interface for callable objects:\n\n```tsx\ninterface Callable {\n  (): string;\n}\n\nconst myCallable: Callable = function () {\n  return \"I was called\";\n};\n\nconst myFunction = myCallable;\nconst value = myFunction();\n    // ^? const value: string\n```\n\nAnother example with parameters:\n\n```tsx\ninterface Callable {\n  (numOne: number, numTwo: number): number;\n}\n\nconst addNumbers: Callable = function (numOne, numTwo) {\n  return numOne + numTwo;\n};\n\nconst myFunction = addNumbers;\nconst value = myFunction(1, 2);\n    // ^? const value: number\n```",
     "date": "2023-02-14",
     "path": "ts-callable.md",

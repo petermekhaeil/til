@@ -2,8 +2,9 @@
 
 This is a collection of short notes of the things I have learned on a daily basis while working on different technologies. I share these notes as I [learn in public](https://www.learninpublic.org/).
 
-_**75** TILs and counting..._
+_**76** TILs and counting..._
 
+- 2023-02-15: [JavaScript Import Map](https://github.com/petermekhaeil/til/blob/master/./learnings/js-import-map.md)
 - 2023-02-14: [TypeScript: Callable interface](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-callable.md)
 - 2023-02-13: [Show data about an npm package using npm view](https://github.com/petermekhaeil/til/blob/master/./learnings/npm-view.md)
 - 2023-02-12: [JSON.parse reviver parameter](https://github.com/petermekhaeil/til/blob/master/./learnings/json-parse-reviver-parameter.md)
