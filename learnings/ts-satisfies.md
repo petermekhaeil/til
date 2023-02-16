@@ -13,14 +13,14 @@ const routes = {
     path: "/auth",
     children: {
       LOGIN: {
-        path: '/login'
-      }
-    }
+        path: "/login",
+      },
+    },
   },
   HOME: {
-    path: '/'
+    path: "/",
   }
-} satisfies Routes
+} satisfies Routes;
 
 routes.AUTH.path                // ✅
 routes.AUTH.children.LOGIN.path // ✅
