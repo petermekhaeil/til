@@ -1,6 +1,6 @@
 [
   {
-    "content": "# JavaScript Import Map",
+    "content": "# JavaScript Import Map\n\nAn [import map](https://github.com/WICG/import-maps) is JSON that browsers use to resolve the path of JS modules when used in `import` and `import()` statements. \n\nAn example can be found on [three.js](https://threejs.org/docs/#manual/en/introduction/Installation):\n\n```html\n<script type=\"importmap\">\n  {\n    \"imports\": {\n      \"three\": \"https://unpkg.com/three@0.149.0/build/three.module.js\"\n    }\n  }\n</script>\n\n<script type=\"module\">\n  import * as THREE from 'three';\n  const scene = new THREE.Scene();\n</script>\n```\n\nAnother example commonly seen in micro-frontends:\n\n```html\n<script type=\"importmap\">\n  {\n    \"imports\": {\n      \"react\": \"https://unpkg.com/react@18.2.0/umd/react.production.min.js\",\n      \"react-dom\": \"https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js\"\n    }\n  }\n</script>\n\n<script type=\"module\">\n  import * as React from 'react';\n  import * as ReactDOM from 'react-dom';\n</script>\n```",
     "date": "2023-02-15",
     "path": "js-import-map.md",
     "title": "JavaScript Import Map"
