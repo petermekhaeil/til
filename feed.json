@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Module Federation",
+    "date": "2023-02-18",
+    "path": "module-federation.md",
+    "title": "Module Federation"
+  },
+  {
     "content": "# Microfrontend using single-spa\n\n[single-spa](https://single-spa.js.org/) is a JavaScript framework that enables you to develop applications using multiple frontend frameworks.\n\nComponents involved in single-spa:\n\n- **root-config**: Entry point for the microfrontend application. It registers the applications and configures the router rules to decide which application should be rendered for each specific route.\n- **application**: Self-contained application developed using any front-end application. They are packaged as modules. \n- **parcel**: Sharable UI components used across applications of different frameworks.\n- **utility**: Modules of common logic such as data fetching, error tracking, component libraries.",
     "date": "2023-02-17",
     "path": "single-spa.md",
