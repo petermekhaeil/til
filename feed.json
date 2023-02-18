@@ -1,9 +1,9 @@
 [
   {
-    "content": "# single-spa",
+    "content": "# Microfrontend using single-spa\n\n[single-spa](https://single-spa.js.org/) is a JavaScript framework that enables you to develop applications using multiple frontend frameworks.\n\nComponents involved in single-spa:\n\n- **root-config**: Entry point for the microfrontend application. It registers the applications and configured the router rules to decide which application should be rendered for each specific route.\n- **application**: Self-contained application developed using any front-end application. They are packaged as modules. ",
     "date": "2023-02-17",
     "path": "single-spa.md",
-    "title": "single-spa"
+    "title": "Microfrontend using single-spa"
   },
   {
     "content": "# TypeScript narrow Array.includes()\n\nA common problem faced with using `Array.includes()` in TypeScript:\n\n```tsx\nconst environments = [\"DEV\", \"UAT\", \"PROD\"] as const;\n\nfunction isSupported(env: string) {\n  if (environments.includes(env)) {\n    // Error: Argument of type 'string' is not \n    // assignable to parameter of type '\"DEV\" | \"UAT\" | \"PROD\"'.\n  }\n}\n```\n\nThe definition of `Array.includes()`:\n\n```tsx\ninterface Array<T> {\n  includes(searchElement: T, fromIndex?: number): boolean;\n}\n```\n\nThe function wants both the searchElement and the array to be of the same type.\n\nThis can be solved by narrowing the type using a helper function:\n\n```tsx\nfunction includes<T extends U, U>(arr: ReadonlyArray<T>, searchElement: U): searchElement is T {\n  return arr.includes(searchElement as T);\n}\n```\n\n- Takes in array of type `ReadonlyArray<T>` and search for element of type `U`.\n- `T extends U`: T is a subset of U.\n- If condition is true, we narrow using `searchElement is T`.\n\n```tsx\nfunction isSupported(env: string) {\n  if (includes(environments, env)) {\n    console.log(env);\n              // ^? env: \"DEV\" | \"UAT\" | \"PROD\"\n  }\n}\n```",

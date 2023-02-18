@@ -4,7 +4,7 @@ This is a collection of short notes of the things I have learned on a daily basi
 
 _**78** TILs and counting..._
 
-- 2023-02-17: [single-spa](https://github.com/petermekhaeil/til/blob/master/./learnings/single-spa.md)
+- 2023-02-17: [Microfrontend using single-spa](https://github.com/petermekhaeil/til/blob/master/./learnings/single-spa.md)
 - 2023-02-16: [TypeScript narrow Array.includes()](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-array-includes.md)
 - 2023-02-15: [JavaScript Import Map](https://github.com/petermekhaeil/til/blob/master/./learnings/js-import-map.md)
 - 2023-02-14: [TypeScript: Callable interface](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-callable.md)
