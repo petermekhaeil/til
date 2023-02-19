@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Docker: Copy files from another image\n\n`COPY --from` is used for [mulit-stage builds](https://docs.docker.com/build/building/multi-stage/) and it is used to copy from another image, either by referencing a local image name or a tag available on a Docker registry. \n\n```docker\nCOPY --from=nginx:latest /etc/nginx/nginx.conf /nginx.conf\n```\n\nIt can also be used for copying from stages created earlier in the Dockerfile:\n\n```docker\n# stage 1\nFROM alpine as git\nRUN apk add git\n\n# stage 2\nFROM git as fetch\nWORKDIR /repo\nRUN git clone https://github.com/your/repository.git .\n\n# stage 3\nFROM nginx as site\nCOPY --from=fetch /repo/docs/ /usr/share/nginx/html\n```",
+    "date": "2023-02-19",
+    "path": "docker-copy-from-image.md",
+    "title": "Docker: Copy files from another image"
+  },
+  {
     "content": "# Module Federation\n\nModule Federation is a microfrontend pattern that involves 2 components:\n\n## Remote\n\n- Remote apps expose modules for other microfrontends apps to import. \n- Remote apps are compiled and deployed independently. \n- Remote apps expose an entry file that contains the exposed modules.\n\n## Host\n\n- Host app consumes modules exposed from remote apps. \n- The host app owns a module registry that maps the module names with the remote location. \n- The remote modules are imported dynamically on-demand when requested. \n\nBoth [Webpack](https://webpack.js.org/concepts/module-federation/) and [Vite](https://github.com/originjs/vite-plugin-federation) support Module Federation.",
     "date": "2023-02-18",
     "path": "module-federation.md",
