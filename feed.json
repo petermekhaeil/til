@@ -1,6 +1,6 @@
 [
   {
-    "content": "# Module Federation",
+    "content": "# Module Federation\n\nModule Federation is a microfrontend pattern that involves 2 components:\n\n## Remote\n\n- Remote apps expose modules for other microfrontends apps to import. \n- Remote apps are compiled and deployed independently. \n- Remote apps expose an entry file that contains the exposed modules.\n\n## Host\n\n- Host app consumes modules exposed from remote apps. \n- The host app owns a module registry that maps the module names with the remote location. \n- The remote modules are imported dynamically on-demand when requested. \n\nBoth [Webpack](https://webpack.js.org/concepts/module-federation/) and [Vite](https://github.com/originjs/vite-plugin-federation) support Module Federation.",
     "date": "2023-02-18",
     "path": "module-federation.md",
     "title": "Module Federation"
