@@ -2,8 +2,9 @@
 
 This is a collection of short notes of the things I have learned on a daily basis while working on different technologies. I share these notes as I [learn in public](https://www.learninpublic.org/).
 
-_**80** TILs and counting..._
+_**81** TILs and counting..._
 
+- 2023-02-20: [JavaScript Symbol.iterator](https://github.com/petermekhaeil/til/blob/master/./learnings/js-symbol-iterator.md)
 - 2023-02-19: [Docker: Copy files from another image](https://github.com/petermekhaeil/til/blob/master/./learnings/docker-copy-from-image.md)
 - 2023-02-18: [Module Federation](https://github.com/petermekhaeil/til/blob/master/./learnings/module-federation.md)
 - 2023-02-17: [Microfrontend using single-spa](https://github.com/petermekhaeil/til/blob/master/./learnings/single-spa.md)

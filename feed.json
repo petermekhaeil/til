@@ -1,5 +1,11 @@
 [
   {
+    "content": "# JavaScript Symbol.iterator\n\n[Symbol.iterator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/iterator) defines the default iterator for an object. Applying it to an object to enable iteration:\n\n```tsx\nconst myObject = { a: 1, b: 2, c: 3 };\n\nmyObject[Symbol.iterator] = function* () {\n  for (const key of Object.keys(this)) {\n    yield [key, this[key]];\n  }\n};\n\nfor (const [key, value] of myObject) {\n  console.log(key, value);\n}\n```",
+    "date": "2023-02-20",
+    "path": "js-symbol-iterator.md",
+    "title": "JavaScript Symbol.iterator"
+  },
+  {
     "content": "# Docker: Copy files from another image\n\n`COPY --from` is used for [mulit-stage builds](https://docs.docker.com/build/building/multi-stage/) and it is used to copy from another image, either by referencing a local image name or a tag available on a Docker registry. \n\n```docker\nCOPY --from=nginx:latest /etc/nginx/nginx.conf /nginx.conf\n```\n\nIt can also be used for copying from stages created earlier in the Dockerfile:\n\n```docker\n# stage 1\nFROM alpine as git\nRUN apk add git\n\n# stage 2\nFROM git as fetch\nWORKDIR /repo\nRUN git clone https://github.com/your/repository.git .\n\n# stage 3\nFROM nginx as site\nCOPY --from=fetch /repo/docs/ /usr/share/nginx/html\n```",
     "date": "2023-02-19",
     "path": "docker-copy-from-image.md",
