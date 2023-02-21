@@ -1,5 +1,11 @@
 [
   {
+    "content": "# JavaScript: scrollend event\n\nThe new [scrollend](https://developer.mozilla.org/en-US/docs/Web/API/Document/scrollend_event) event fires when scrolling has ended. \n\n```js\naddEventListener(\"scrollend\", (event) => {});\n\nonscrollend = (event) => {};\n```\n\nPreviously before this event, there was no straightforward way to detect when scrolling has ended. We would have had to use the `onscroll` and a timer to detect if scrolling has ended. \n\nRead the full write-up on [developer.chrome.com](https://developer.chrome.com/blog/scrollend-a-new-javascript-event/).",
+    "date": "2023-02-21",
+    "path": "js-scrollend-event.md",
+    "title": "JavaScript: scrollend event"
+  },
+  {
     "content": "# JavaScript Symbol.iterator\n\n[Symbol.iterator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/iterator) defines the default iterator for an object. Applying it to an object to enable iteration:\n\n```tsx\nconst myObject = { a: 1, b: 2, c: 3 };\n\nmyObject[Symbol.iterator] = function* () {\n  for (const key of Object.keys(this)) {\n    yield [key, this[key]];\n  }\n};\n\nfor (const [key, value] of myObject) {\n  console.log(key, value);\n}\n```",
     "date": "2023-02-20",
     "path": "js-symbol-iterator.md",
