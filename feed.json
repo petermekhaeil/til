@@ -1,5 +1,11 @@
 [
   {
+    "content": "# CSS.escape()\n\n[CSS.escape()](https://developer.mozilla.org/en-US/docs/Web/API/CSS/escape) returns an string that conforms to the CSS selector specs. Useful when generating dynamic CSS selectors based on an input.\n\n```js\nCSS.escape(\"app:@org/name\");\n// 'app\\\\:\\\\@org\\\\/name'\n```",
+    "date": "2023-02-22",
+    "path": "css-escape.md",
+    "title": "CSS.escape()"
+  },
+  {
     "content": "# JavaScript: scrollend event\n\nThe new [scrollend](https://developer.mozilla.org/en-US/docs/Web/API/Document/scrollend_event) event fires when scrolling has ended. \n\n```js\naddEventListener(\"scrollend\", (event) => {});\n\nonscrollend = (event) => {};\n```\n\nPreviously before this event, there was no straightforward way to detect when scrolling has ended. We would have had to use the `onscroll` and a timer to detect if scrolling has ended. \n\nRead the full write-up on [developer.chrome.com](https://developer.chrome.com/blog/scrollend-a-new-javascript-event/).",
     "date": "2023-02-21",
     "path": "js-scrollend-event.md",
