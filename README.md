@@ -2,8 +2,9 @@
 
 This is a collection of short notes of the things I have learned on a daily basis while working on different technologies. I share these notes as I [learn in public](https://www.learninpublic.org/).
 
-_**83** TILs and counting..._
+_**84** TILs and counting..._
 
+- 2023-02-23: [Spread operator clones enumerables properties](https://github.com/petermekhaeil/til/blob/master/./learnings/js-spread-shallow-copy.md)
 - 2023-02-22: [CSS.escape()](https://github.com/petermekhaeil/til/blob/master/./learnings/css-escape.md)
 - 2023-02-21: [JavaScript: scrollend event](https://github.com/petermekhaeil/til/blob/master/./learnings/js-scrollend-event.md)
 - 2023-02-20: [JavaScript Symbol.iterator](https://github.com/petermekhaeil/til/blob/master/./learnings/js-symbol-iterator.md)

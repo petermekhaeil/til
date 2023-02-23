@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Spread operator clones enumerables properties\n\n[Spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) does a shallow clone of only enumerable properties. Non-enumerable properties such as prototype will not be cloned.",
+    "date": "2023-02-23",
+    "path": "js-spread-shallow-copy.md",
+    "title": "Spread operator clones enumerables properties"
+  },
+  {
     "content": "# CSS.escape()\n\n[CSS.escape()](https://developer.mozilla.org/en-US/docs/Web/API/CSS/escape) returns an string that conforms to the CSS selector specs. Useful when generating dynamic CSS selectors based on an input.\n\n```js\nCSS.escape(\"app:@org/name\");\n// 'app\\\\:\\\\@org\\\\/name'\n```",
     "date": "2023-02-22",
     "path": "css-escape.md",
