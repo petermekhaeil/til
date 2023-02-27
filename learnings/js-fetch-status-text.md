@@ -1,1 +1,1 @@
-# fetch() statusText
+# Fetch Response.statusText
