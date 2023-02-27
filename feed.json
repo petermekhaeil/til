@@ -1,9 +1,9 @@
 [
   {
-    "content": "# fetch() statusText",
+    "content": "# Fetch Response.statusText",
     "date": "2023-02-27",
     "path": "js-fetch-status-text.md",
-    "title": "fetch() statusText"
+    "title": "Fetch Response.statusText"
   },
   {
     "content": "# Signals\n\n> `useSignal()` => getter + setter\n\nSignals are **reactive**. They keep track of the subscriptions and notify subscribers when state has changed. Calling the getter creates a subscription, telling the signal of the location that requires the value.\n\n## Signals in frameworks\n\n### SolidJS\n\n```jsx\nimport { createSignal } from \"solid-js\";\n\nfunction Counter() {\n  const [count, setCount] = createSignal(0);\n\n  setInterval(() => setCount(count() + 1), 1000);\n\n  return <div>Count: {count()}</div>;\n}\n```\n\n### Qwik\n\n```jsx\nexport default component$(() => {\n  const count = useSignal(0);\n\n  return (\n    <>\n      <button onClick$={() => count.value++}>Increment</button>\n      Count: {count.value}\n    </>\n  );\n});\n```\n\n### Preact\n\n```jsx\nimport { signal } from \"@preact/signals\";\n\nconst count = signal(0);\n\nfunction Counter() {\n  return (\n    <div>\n      <p>Count: {count}</p>\n      <button onClick={() => count.value++}>click me</button>\n    </div>\n  );\n}\n```\n\n### Vue\n\n- Vue has a guide on [reactivity](https://vuejs.org/guide/extras/reactivity-in-depth.html#connection-to-signals) that compares signals with Vue's Composition API.\n- Evan You [writes Solid style signals in Vue in ~10 lines](https://twitter.com/youyuxi/status/1618181618069573633).\n- Evan You [writes Angular style signals in Vue in ~15 lines](https://twitter.com/youyuxi/status/1628214809631293440).\n\n### Angular\n \nAngular has [announced](https://github.com/angular/angular/discussions/49090) some prototyping work around adding signals as a reactive primitive in Angular.",

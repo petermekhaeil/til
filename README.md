@@ -4,7 +4,7 @@ This is a collection of short notes of the things I have learned on a daily basi
 
 _**88** TILs and counting..._
 
-- 2023-02-27: [fetch() statusText](https://github.com/petermekhaeil/til/blob/master/./learnings/js-fetch-status-text.md)
+- 2023-02-27: [Fetch Response.statusText](https://github.com/petermekhaeil/til/blob/master/./learnings/js-fetch-status-text.md)
 - 2023-02-26: [Signals](https://github.com/petermekhaeil/til/blob/master/./learnings/js-signals.md)
 - 2023-02-25: [Math.random() vs Crypto.getRandomValue()](https://github.com/petermekhaeil/til/blob/master/./learnings/js-math-random-vs-crypto.md)
 - 2023-02-24: [Next.js statically typed links](https://github.com/petermekhaeil/til/blob/master/./learnings/nextjs-type-safe-link.md)
