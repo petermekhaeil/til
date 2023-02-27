@@ -1,8 +1,17 @@
 # Signals
 
-> `useSignal()` => getter + setter
+> Signals are reactive primitives for managing application state.
+
+([Reference](https://preactjs.com/guide/v10/signals/))
 
 Signals are **reactive**. They keep track of the subscriptions and notify subscribers when state has changed. Calling the getter creates a subscription, telling the signal of the location that requires the value.
+
+## Signals vs useState()
+
+- `useSignal()` => getter + setter
+- `useState()` => value + setter
+
+`useState()` is not reactive. React does not know of the location that requires the value, therefore must re-renders the whole component when calling the setter.
 
 ## Signals in frameworks
 
