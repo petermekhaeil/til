@@ -1,6 +1,6 @@
 [
   {
-    "content": "# Fetch Response.statusText",
+    "content": "# Fetch Response.statusText\n\n[Response.statusText](https://developer.mozilla.org/en-US/docs/Web/API/Response/statusText) returns empty string in HTTP/2. According to spec:\n\n> HTTP/2 does not define a way to carry the version or reason phrase that is included in an HTTP/1.1 status line.\n\nReference:\n\n- [RFC 7540](https://tools.ietf.org/html/rfc7540#section-8.1.2.4)\n- [whatwg/fetch#599](https://github.com/whatwg/fetch/issues/599)",
     "date": "2023-02-27",
     "path": "js-fetch-status-text.md",
     "title": "Fetch Response.statusText"
