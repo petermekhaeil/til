@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Git: Work with multiple accounts\n\n```bash\n# Default GitHub account\nHost github.com\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/id_rsa\n  \nHost github.com-work\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/id_rsa_work\n```\n\nUse the new host:\n\n```\ngit remote add origin git@github.com-work:username/repo.git\n```",
+    "date": "2023-02-28",
+    "path": "git-multiple-accounts.md",
+    "title": "Git: Work with multiple accounts"
+  },
+  {
     "content": "# Fetch Response.statusText\n\nEver wondered why [Response.statusText](https://developer.mozilla.org/en-US/docs/Web/API/Response/statusText) returns an empty string? It's because it is not part of the HTTP/2 spec. \n\n> HTTP/2 does not define a way to carry the version or reason phrase that is included in an HTTP/1.1 status line.\n\nOtherwise, in HTTP/1 it will return status message such as `OK`, `Continue` and `Not Found`.\n\nReference:\n\n- [RFC 7540](https://tools.ietf.org/html/rfc7540#section-8.1.2.4)\n- [whatwg/fetch#599](https://github.com/whatwg/fetch/issues/599)",
     "date": "2023-02-27",
     "path": "js-fetch-status-text.md",
