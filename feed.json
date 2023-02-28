@@ -1,6 +1,6 @@
 [
   {
-    "content": "# Git: Work with multiple accounts\n\n```bash\n# Default GitHub account\nHost github.com\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/id_rsa\n  \nHost github.com-work\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/id_rsa_work\n```\n\nUse the new host:\n\n```\ngit remote add origin git@github.com-work:username/repo.git\n```",
+    "content": "# Git: Work with multiple accounts\n\n```bash\n# ~/.gitconfig\n\nHost github.com\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/id_rsa\n  \nHost github.com-work\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/id_rsa_work\n  \n[user]\n    name = Default Name\n    email = default.name@example.com\n\n[includeIf \"gitdir:~/work/\"]\n    path = ~/work/.gitconfig\n```\n\n```bash\n# ~/work/.gitconfig\n\n[user]\n    name = Work Name\n    email = work.email@example.com\n```\n\nUse the new host:\n\n```\ngit remote add origin git@github.com-work:username/repo.git\n```",
     "date": "2023-02-28",
     "path": "git-multiple-accounts.md",
     "title": "Git: Work with multiple accounts"
