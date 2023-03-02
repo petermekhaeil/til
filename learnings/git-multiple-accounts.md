@@ -1,9 +1,9 @@
 # Git: Work with multiple accounts
 
-- Configure multiple host aliases in git configuration:
+- Configure multiple host aliases in ssh configuration:
 
 ```bash
-# ~/.gitconfig
+# ~/.ssh/config
 
 Host github.com
   HostName github.com
@@ -16,9 +16,9 @@ Host github.com-work
   IdentityFile ~/.ssh/id_rsa_work
 ```
 
-- To use a different name and email, add [conditional includes](https://git-scm.com/docs/git-config#_conditional_includes) in git configuration to supply a different `.gitconfig` path based on working directory.
+- To use a different name and email, add [conditional includes](https://git-scm.com/docs/git-config#_conditional_includes) in git configuration to supply a different `.gitconfig` path based on working directory:
 
-```
+```bash
 # ~/.gitconfig
 
 [user]
