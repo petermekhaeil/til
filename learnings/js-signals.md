@@ -13,6 +13,8 @@ Signals are **reactive**. They keep track of the subscriptions and notify subscr
 
 `useState()` is not reactive. React does not know of the location that requires the value, therefore must re-renders the whole component when calling the setter.
 
+([Reference](https://www.builder.io/blog/usesignal-is-the-future-of-web-frameworks))
+
 ## Signals in frameworks
 
 ### SolidJS
