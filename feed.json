@@ -1,5 +1,11 @@
 [
   {
+    "content": "# The Mark Text element\n\nThe [\\<mark\\>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark) HTML element represents marked or highlighted text.\n\n```html\n<span><mark>Peter</mark> Mekhaeil</span>\n```\n\nCan be styled:\n\n```css\nmark {\n  background-color: yellow;\n  color: black;\n}\n```",
+    "date": "2023-03-06",
+    "path": "html-mark-element.md",
+    "title": "The Mark Text element"
+  },
+  {
     "content": "# Git: Work with multiple accounts\n\n- Configure multiple host aliases in ssh configuration:\n\n```bash\n# ~/.ssh/config\n\nHost github.com\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/id_rsa\n  \nHost github.com-work\n  HostName github.com\n  User git\n  IdentityFile ~/.ssh/id_rsa_work\n```\n\n- To use a different name and email, add [conditional includes](https://git-scm.com/docs/git-config#_conditional_includes) in git configuration to supply a different `.gitconfig` path based on working directory:\n\n```bash\n# ~/.gitconfig\n\n[user]\n    name = Default Name\n    email = default.name@example.com\n\n[includeIf \"gitdir:~/work/\"]\n    path = ~/work/.gitconfig\n```\n\n```bash\n# ~/work/.gitconfig\n\n[user]\n    name = Work Name\n    email = work.email@example.com\n```\n\n- Use the new host alias as remote url:\n\n```bash\ngit remote add origin git@github.com-work:username/repo.git\n```",
     "date": "2023-02-28",
     "path": "git-multiple-accounts.md",
