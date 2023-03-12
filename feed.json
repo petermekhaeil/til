@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Add to previous Git commit\n\n```bash\ngit add my-file\ngit commit --amend --no-edit\n```\n\n- `--amend`: Amends previous commit.\n- `--no-edit`: Use previous commit message.",
+    "date": "2023-03-12",
+    "path": "git-add-to-previous-commit.md",
+    "title": "Add to previous Git commit"
+  },
+  {
     "content": "# The Mark Text element\n\nThe [\\<mark\\>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark) HTML element represents marked or highlighted text.\n\n```html\n<span><mark>Peter</mark> Mekhaeil</span>\n```\n\nCan be styled:\n\n```css\nmark {\n  background-color: yellow;\n  color: black;\n}\n```",
     "date": "2023-03-06",
     "path": "html-mark-element.md",
