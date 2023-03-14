@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Copy a function in JavaScript\n\n```js\nconst newFunction = oldFunction.bind({});\n```\n\n- [Function.prototype.bind()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind) creates a new function with `this` set to the value passed in the argument. \n- A new function is created and it references the function that bind was called on.\n- The new function will not have references to any additional properties that may have been attached to the original function.",
+    "date": "2023-03-14",
+    "path": "js-bind.md",
+    "title": "Copy a function in JavaScript"
+  },
+  {
     "content": "# Add to previous Git commit\n\n```bash\ngit add my-file\ngit commit --amend --no-edit\n```\n\n- `--amend`: Amends previous commit.\n- `--no-edit`: Use previous commit message.",
     "date": "2023-03-12",
     "path": "git-add-to-previous-commit.md",
