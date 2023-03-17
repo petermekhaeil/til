@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Show contents of Git stash\n\nTo show list of files in the most recent Git stash:\n\n```bash\ngit stash show\n```\n\nTo show the diff:\n\n```bash\ngit stash show -p\n```\n\nTo show content of nth most recent stash:\n\n```bash\ngit stash show -p stash@{n}\n```",
+    "date": "2023-03-17",
+    "path": "git-stash-show.md",
+    "title": "Show contents of Git stash"
+  },
+  {
     "content": "# Copy a function in JavaScript\n\n```js\nconst newFunction = oldFunction.bind({});\n```\n\n- [Function.prototype.bind()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind) creates a new function with `this` set to the value passed in the argument. \n- A new function is created and it references the function that bind was called on.\n- The new function will not have references to any additional properties that may have been attached to the original function.",
     "date": "2023-03-14",
     "path": "js-bind.md",
