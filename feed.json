@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Overriding HTML Attributes in React TypeScript\n\nFirst extend the native HTML attributes:\n\n```ts\ninterface MyInputProps extends React.HTMLProps<HTMLInputElement> {\n  size: \"sm\" | \"md\" | \"lg\";\n}\n```\n\nA typescript will appear because TS knows that `HTMLInputElement` already has a `size` attribute and it does not match the one we added:\n\n```ts\ninterface MyInputProps extends React.HTMLProps<HTMLInputElement> {\n  size: \"sm\" | \"md\" | \"lg\";\n// ^? Type 'string' is not assignable to type 'number'\n}\n```\n\nWe need to omit the native `size` attribute:\n\n```ts\ninterface MyInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 'size'> {\n  size: \"sm\" | \"md\" | \"lg\";\n}\n```\n\nAnd now we can type our new component. Spread the props so our new `size` prop is not set as the value to the native HTML attribute.\n\n```ts\nconst MyInput: React.FC<MyInputProps> = (props) => {\n  const { size, ...rest } = props;\n  return <input {...rest} className=\"my-input\" />;\n};\n```\n\nIf we want to continue using the native `size`, [Chakra UI](https://chakra-ui.com/docs/components/input/usage#changing-the-size-of-the-input) has a clever technique of using a new prop `htmlSize` that can be used instead:\n\n```ts\ninterface MyInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 'size'> {\n  size: \"sm\" | \"md\" | \"lg\";\n  htmlSize?: number;\n}\n\nconst MyInput: React.FC<MyInputProps> = (props) => {\n  const { size, htmlSize, ...rest } = props;\n  return <input {...rest} size={htmlSize} className=\"my-input\" />;\n};\n```",
+    "date": "2023-03-21",
+    "path": "ts-html-attributes.md",
+    "title": "Overriding HTML Attributes in React TypeScript"
+  },
+  {
     "content": "# Show contents of Git stash\n\nTo show list of files in the most recent Git stash:\n\n```bash\ngit stash show\n```\n\nTo show the diff:\n\n```bash\ngit stash show -p\n```\n\nTo show content of nth most recent stash:\n\n```bash\ngit stash show -p stash@{n}\n```",
     "date": "2023-03-17",
     "path": "git-stash-show.md",
