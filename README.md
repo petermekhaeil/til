@@ -2,8 +2,9 @@
 
 This is a collection of short notes of the things I have learned on a daily basis while working on different technologies. I share these notes as I [learn in public](https://www.learninpublic.org/).
 
-_**94** TILs and counting..._
+_**95** TILs and counting..._
 
+- 2023-03-23: [TypeScript Exact Types](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-exact-types.md)
 - 2023-03-21: [Overriding HTML Attributes in React TypeScript](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-html-attributes.md)
 - 2023-03-17: [Show contents of Git stash](https://github.com/petermekhaeil/til/blob/master/./learnings/git-stash-show.md)
 - 2023-03-14: [Copy a function in JavaScript](https://github.com/petermekhaeil/til/blob/master/./learnings/js-bind.md)
