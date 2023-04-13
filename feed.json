@@ -1,5 +1,11 @@
 [
   {
+    "content": "# EditorConfig Glob Expressions\n\nThe sections in `.editorconfig` are filepath globs. They can be used to define config for certain files and directories:\n\n```ini\nroot = true\n\n[*]\nindent_style = tab\nindent_size = 2\ninsert_final_newline = true\n\n# Match exact file package.json\n[package.json]\nindent_style = space\n\n# Match .css files under test directory\n[test/**/*.css]\ninsert_final_newline = false\n```",
+    "date": "2023-04-13",
+    "path": "editorconfig-glob-expressions.md",
+    "title": "EditorConfig Glob Expressions"
+  },
+  {
     "content": "# TypeScript Exact Types\n\nTypeScript will not show an error if additional keys are added to an object literal:\n\n```ts\ntype User = {\n  name: string;\n};\n\nconst userData = {\n  name: \"Peter\",\n  email: \"peter@email.com\",\n};\n\nfunction printUser(user: User) {\n  console.log(user);\n}\n\nprintUser({ name: \"Peter\", email: \"peter@email.com\" });\n// Error: Object literal may only specify known properties, and 'email' does not exist in type 'AllowedType'.\n\nprintUser(userData);\n// No error on this line\n```\n\nThis is because it is intentional. See [microsoft/TypeScript#12936](https://github.com/microsoft/TypeScript/issues/12936).\n\nA workaround is available on [https://stackoverflow.com/a/61960616](https://stackoverflow.com/a/61960616) by using a custom utility `Exact`:\n\n```tsx\ntype Exact<A, B> = A extends B ? (B extends A ? A : never) : never;\n\ntype User = {\n  name: string;\n};\n\nconst userData = {\n  name: \"Peter\",\n  email: \"peter@email.com\",\n};\n\nfunction printUser<T>(user: Exact<T, User>) {\n  console.log(user);\n}\n\nprintUser({ name: \"Peter\", email: \"peter@email.com\" });\n// Error: Object literal may only specify known properties, and 'email' does not exist in type 'AllowedType'.\n\nprintUser(userData);\n// Error: Argument of type '{ name: string; email: string; }' is not assignable to parameter of type 'never'\n```",
     "date": "2023-03-23",
     "path": "ts-exact-types.md",
