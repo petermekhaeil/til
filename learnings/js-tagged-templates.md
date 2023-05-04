@@ -36,13 +36,17 @@ introduce`My name is ${person}`
 
 ## Tagged Templates in the wild
 
-- [Styled Components](https://styled-components.com/)
+- [Apollo Client](https://www.apollographql.com/docs/react/data/queries/#executing-a-query)
 
 ```js
-const Button = styled.a`
-  background: white;
-  color: black;
-`
+const GET_DOGS = gql`
+  query GetDogs {
+    dogs {
+      id
+      breed
+    }
+  }
+`;
 ```
 
 - [graphql-tag](https://github.com/apollographql/graphql-tag)
@@ -74,6 +78,15 @@ const users = await sql`
 ```js
 const userId = 42
 const result = await prisma.$queryRaw`SELECT * FROM User WHERE id = ${userId};`
+```
+
+- [Styled Components](https://styled-components.com/)
+
+```js
+const Button = styled.a`
+  background: white;
+  color: black;
+`
 ```
 
 - [twin.macro](https://github.com/ben-rogerson/twin.macro)
