@@ -69,6 +69,13 @@ const users = await sql`
 `
 ```
 
+- [Prisma](https://www.prisma.io/docs/concepts/components/prisma-client/raw-database-access)
+
+```js
+const userId = 42
+const result = await prisma.$queryRaw`SELECT * FROM User WHERE id = ${userId};`
+```
+
 - [twin.macro](https://github.com/ben-rogerson/twin.macro)
 
 ```js
