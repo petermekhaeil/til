@@ -2,8 +2,9 @@
 
 This is a collection of short notes of the things I have learned on a daily basis while working on different technologies. I share these notes as I [learn in public](https://www.learninpublic.org/).
 
-_**97** TILs and counting..._
+_**98** TILs and counting..._
 
+- 2023-06-05: [How to Stop All Docker Containers](https://github.com/petermekhaeil/til/blob/master/./learnings/docker-stop-all.md)
 - 2023-05-04: [JavaScript: Tagged Template Literals](https://github.com/petermekhaeil/til/blob/master/./learnings/js-tagged-templates.md)
 - 2023-04-13: [EditorConfig Glob Expressions](https://github.com/petermekhaeil/til/blob/master/./learnings/editorconfig-glob-expressions.md)
 - 2023-03-23: [TypeScript Exact Types](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-exact-types.md)
