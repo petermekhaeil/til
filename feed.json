@@ -1,5 +1,11 @@
 [
   {
+    "content": "  # Automatically handle `updated_at` column\n\n> **[moddatetime()](https://www.postgresql.org/docs/current/static/contrib-spi.html)** is a trigger that stores the current time into a timestamp field. This can be useful for tracking the last modification time of a particular row within a table.\n>\n> To use, create a BEFORE UPDATE trigger using this function. Specify a single trigger argument: the name of the column to be modified. The column must be of type timestamp or timestamp with time zone.\n\n  ```sql\ncreate extension if not exists moddatetime schema extensions;\n\n-- assuming the table name is \"todos\", and a timestamp column \"updated_at\"\n-- this trigger will set the \"updated_at\" column to the current timestamp for every update\ncreate trigger handle_updated_at before update on todos\n  for each row execute procedure moddatetime (updated_at);\n```",
+    "date": "2023-06-16",
+    "path": "postgresql-moddatetime.md",
+    "title": "  Automatically handle `updated_at` column"
+  },
+  {
     "content": "# How to Stop All Docker Containers\n\n```bash\ndocker kill $(docker ps -q)\n```\n\n- `docker ps`: Lists all running containers. `-q` only return the container IDs.\n- `docker kill`: Stops the continers by container ID.\n\n## Remove all containers\n\n```bash\ndocker rm $(docker ps -a -q)\n```\n\n- `docker ps -a -q`: Lists all containers (including non-running) and only return their IDs.\n- `docker rm`: Remove containers by their ID.\n\n## Remove all images\n\n```bash\ndocker rmi $(docker images -q)\n```\n\n- `docker images -q`: Lists all images by their IDs.\n- `docker rmi`: Removes docker images by their ID.",
     "date": "2023-06-05",
     "path": "docker-stop-all.md",
