@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Nginx Nested Locations\n\n```\nserver {\n  location /app {\n    location /app/assets {\n      # ...\n    }\n    \n    location /app/pages {\n      # ...\n    }\n  }\n}\n```\n\nNested locations are not relative to the parent location. \n\n- `location /app` parent location block that matches requests starting with `/app`.\n- `location/app/assets` nested location that matches `/app/assets`.\n- `location/app/pages` nested location that matches `/app/pages`.",
+    "date": "2023-09-18",
+    "path": "nginx-nested-locations.md",
+    "title": "Nginx Nested Locations"
+  },
+  {
     "content": "# Git: push --force-with-lease",
     "date": "2023-07-20",
     "path": "git-push-force-with-lease.md",

@@ -2,8 +2,9 @@
 
 This is a collection of short notes of the things I have learned on a daily basis while working on different technologies. I share these notes as I [learn in public](https://www.learninpublic.org/).
 
-_**100** TILs and counting..._
+_**101** TILs and counting..._
 
+- 2023-09-18: [Nginx Nested Locations](https://github.com/petermekhaeil/til/blob/master/./learnings/nginx-nested-locations.md)
 - 2023-07-20: [Git: push --force-with-lease](https://github.com/petermekhaeil/til/blob/master/./learnings/git-push-force-with-lease.md)
 - 2023-06-16: [  Automatically handle `updated_at` column](https://github.com/petermekhaeil/til/blob/master/./learnings/postgresql-moddatetime.md)
 - 2023-06-05: [How to Stop All Docker Containers](https://github.com/petermekhaeil/til/blob/master/./learnings/docker-stop-all.md)
