@@ -1,5 +1,11 @@
 [
   {
+    "content": "# JavaScript Barrel File\n\nA barrel file is a module that re-exports from other modules:\n\n```js\n// ./components/index.js\nexport { Button } from './Button.js';\nexport { Anchor } from './Anchor.js';\nexport { Text } from './Text.js'\n```\n\nUsage:\n\n```js\nimport { Button, Anchor, Text } from './components';\n```\n\n## Performance Impact\n\nBarrel files have an impact on your bundler performance (this is how I came across the term _Barrel Files_). \n\n- [Next.js recommend to not use them](https://nextjs.org/blog/next-13-1#import-resolution-for-smaller-bundles).\n- They make it difficult on bundlers to analyse your code.  \n- They risk exporting modules of the same name.\n- They have a chance of circular references.\n\n## Read More\n\n- https://marvinh.dev/blog/speeding-up-javascript-ecosystem-part-7/\n- https://renatopozzi.me/articles/your-nextjs-bundle-will-thank-you\n- https://flaming.codes/posts/barrel-files-in-javascript",
+    "date": "2023-10-11",
+    "path": "js-barrel-files.md",
+    "title": "JavaScript Barrel File"
+  },
+  {
     "content": "# Nginx Nested Locations\n\nNginx supports nested locations:\n\n```\nserver {\n  location /app {\n    location /app/assets {\n      # ...\n    }\n    \n    location /app/pages {\n      # ...\n    }\n  }\n}\n```\n\nNote that nested locations are not relative to the parent location. \n\nIn the above example:\n- `location /app` parent location block that matches requests starting with `/app`.\n- `location/app/assets` nested location that matches `/app/assets`.\n- `location/app/pages` nested location that matches `/app/pages`.",
     "date": "2023-09-18",
     "path": "nginx-nested-locations.md",
