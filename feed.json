@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Emulate a focused page in DevTools\n\nIf you switch focus from the current page to the Chrome DevTools, some overlay elements automatically hide if they are triggered by focus. For example, dropdown menus.\n\nThe Chrome DevTools have a feature to emulate page focus. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS) and search for \"Emulate a focused page\". You won't lose focus of the page while inspecting the elements.\n\n![Screenshot 2023-10-25 at 10 32 59 PM](https://github.com/petermekhaeil/til/assets/4616064/abd0854f-dac1-43e9-868b-d71496401f7b)",
+    "date": "2023-10-25",
+    "path": "devtools-emulate-focused-page.md",
+    "title": "Emulate a focused page in DevTools"
+  },
+  {
     "content": "# JavaScript Barrel File\n\nA barrel file is a module that re-exports from other modules:\n\n```js\n// ./components/index.js\nexport { Button } from './Button.js';\nexport { Anchor } from './Anchor.js';\nexport { Text } from './Text.js'\n```\n\nUsage:\n\n```js\nimport { Button, Anchor, Text } from './components';\n```\n\n## Performance Impact\n\nBarrel files have an impact on your bundler performance (this is how I came across the term _Barrel Files_). \n\n- [Next.js recommend to not use them](https://nextjs.org/blog/next-13-1#import-resolution-for-smaller-bundles).\n- They make it difficult on bundlers to analyse your code.  \n- They risk exporting modules of the same name.\n- They have a chance of circular references.\n\n## Read More\n\n- https://marvinh.dev/blog/speeding-up-javascript-ecosystem-part-7/\n- https://renatopozzi.me/articles/your-nextjs-bundle-will-thank-you\n- https://flaming.codes/posts/barrel-files-in-javascript",
     "date": "2023-10-11",
     "path": "js-barrel-files.md",
