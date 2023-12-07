@@ -2,8 +2,9 @@
 
 This is a collection of short notes of the things I have learned on a daily basis while working on different technologies. I share these notes as I [learn in public](https://www.learninpublic.org/).
 
-_**104** TILs and counting..._
+_**105** TILs and counting..._
 
+- 2023-12-07: [SvelteKit Sync](https://github.com/petermekhaeil/til/blob/master/./learnings/sveltekit-sync.md)
 - 2023-11-21: [Recursively delete .DS_Store](https://github.com/petermekhaeil/til/blob/master/./learnings/mac-delete-ds-store.md)
 - 2023-10-25: [Emulate a focused page in DevTools](https://github.com/petermekhaeil/til/blob/master/./learnings/devtools-emulate-focused-page.md)
 - 2023-10-11: [JavaScript Barrel File](https://github.com/petermekhaeil/til/blob/master/./learnings/js-barrel-files.md)

@@ -1,5 +1,11 @@
 [
   {
+    "content": "# SvelteKit Sync\n\n`svelte-kit sync` creates the tsconfig.json and all generated types for your project. This is useful because Sveltekit has [generated types](https://kit.svelte.dev/docs/types#generated-types).\n\nExample:\n\n```tsx\nimport { API_KEY } from '$env/static/private';\n// ^? Module '\"$env/static/private\"' has no exported member 'API_KEY'.\n```\n\nRunning `svelte-kit sync` will generate the correct types and remove the error:\n\n```tsx\nimport { API_KEY } from '$env/static/private';\n// ^? (alias) const API_KEY: string\n```\n\nYou'll find the generated types under the `.svelte-kit` folder. Here is the one for environment variables:\n\n```tsx\n// .svelte-kit/ambient.d.ts\ndeclare module '$env/static/private' {\n\texport const API_KEY: string;\n  ...\n}\n```",
+    "date": "2023-12-07",
+    "path": "sveltekit-sync.md",
+    "title": "SvelteKit Sync"
+  },
+  {
     "content": "# Recursively delete .DS_Store\n\nDelete all `.DS_Store` found within a directory recursively:\n\n```bash\nfind . -name '.DS_Store' -type f -delete -print\n```\n\n`-print` will also print the path of the file when deleting.",
     "date": "2023-11-21",
     "path": "mac-delete-ds-store.md",
