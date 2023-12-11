@@ -27,4 +27,3 @@ This will render the below form:
 ## Learn More
 - [Documentation](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository#creating-issue-forms)
 - [Syntax for GitHub's form schema](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-githubs-form-schema)
-- [Example: cvai.app](https://github.com/petermekhaeil/cvai.app/blob/master/.github/ISSUE_TEMPLATE/feature_request.yml?plain=1)
