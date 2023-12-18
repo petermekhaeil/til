@@ -1,5 +1,11 @@
 [
   {
+    "content": "# GPTBot is OpenAI’s web crawler \n\nOpenAI's web crawler has a user-agent:\n\n```\nUser agent token: GPTBot\nFull user-agent string: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.0; +https://openai.com/gptbot)\n```\n\nWhich means it can be restricted to crawl your site using robots.txt:\n\n```\nUser-agent: GPTBot\nDisallow: /\n```\n\nFound in OpenAI's [documentation](https://platform.openai.com/docs/gptbot).",
+    "date": "2023-12-18",
+    "path": "ai-gptbot.md",
+    "title": "GPTBot is OpenAI’s web crawler "
+  },
+  {
     "content": "# GitHub Issue Forms\n\nGitHub supports web form fields in issue templates:\n\n```yaml\nname: Feature request\ndescription: Suggest an idea for this project\nbody:\n  - type: markdown\n    attributes:\n      value: |\n        Thanks for taking the time to fill out this feature report!\n  - type: textarea\n    id: feature-description\n    attributes:\n      label: Description\n      description: \"A clear and concise description of what the problem is.\"\n      placeholder: Ex. I'm always frustrated when [...].\n    validations:\n      required: true\n```\n\nThis will render the below form:\n\n![Screenshot 2023-12-10 at 9 59 16 PM](https://github.com/petermekhaeil/til/assets/4616064/bdf28f4e-bc6c-4303-a789-8b2c3b9b9c09)\n\n## Learn More\n- [Documentation](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository#creating-issue-forms)\n- [Syntax for GitHub's form schema](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-githubs-form-schema)",
     "date": "2023-12-10",
     "path": "github-issue-forms.md",
