@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Smart App Banners\n\nThe banners on top of web apps that promote the native version of the app is controlled using a `<meta>` tag in the HTML:\n\n```html\n<meta name=\"apple-itunes-app\" content=\"app-id=1477376905, app-argument=https://github.com/\" />\n```\n\nSee the [documentation on Promoting Apps with Smart App Banners\n](https://developer.apple.com/documentation/webkit/promoting_apps_with_smart_app_banners). This only works for iOS Safari.\n\nExample from GitHub:\n\n![IMG_1477](https://github.com/petermekhaeil/til/assets/4616064/f7cf2b12-abe9-498e-9962-57fbbcd8f1c0)",
+    "date": "2023-12-21",
+    "path": "ios-smart-app-banners.md",
+    "title": "Smart App Banners"
+  },
+  {
     "content": "# GPTBot is OpenAI’s web crawler \n\nOpenAI's web crawler has a user-agent:\n\n```\nUser agent token: GPTBot\nFull user-agent string: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.0; +https://openai.com/gptbot)\n```\n\nWhich means it can be restricted to crawl your site using robots.txt:\n\n```\nUser-agent: GPTBot\nDisallow: /\n```\n\nFound in OpenAI's [documentation](https://platform.openai.com/docs/gptbot).",
     "date": "2023-12-18",
     "path": "ai-gptbot.md",

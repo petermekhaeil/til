@@ -2,8 +2,9 @@
 
 This is a collection of short notes of the things I have learned on a daily basis while working on different technologies. I share these notes as I [learn in public](https://www.learninpublic.org/).
 
-_**107** TILs and counting..._
+_**108** TILs and counting..._
 
+- 2023-12-21: [Smart App Banners](https://github.com/petermekhaeil/til/blob/master/./learnings/ios-smart-app-banners.md)
 - 2023-12-18: [GPTBot is OpenAI’s web crawler ](https://github.com/petermekhaeil/til/blob/master/./learnings/ai-gptbot.md)
 - 2023-12-10: [GitHub Issue Forms](https://github.com/petermekhaeil/til/blob/master/./learnings/github-issue-forms.md)
 - 2023-12-07: [SvelteKit Sync](https://github.com/petermekhaeil/til/blob/master/./learnings/sveltekit-sync.md)
