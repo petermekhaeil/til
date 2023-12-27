@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Use Zod to validate File input\n\nYou can use [Zod](https://zod.dev/)'s `instanceof` validator to validate file inputs:\n\n```js\nconst MAX_UPLOAD_SIZE = 1024 * 1024 * 3; // 3MB\nconst ACCEPTED_FILE_TYPES = ['image/png'];\n\nconst Schema = z\n  .instanceof(File)\n  .optional()\n  .refine((file) => {\n    return !file || file.size <= MAX_UPLOAD_SIZE;\n  }, 'File size must be less than 3MB')\n  .refine((file) => {\n    return ACCEPTED_FILE_TYPES.includes(file.type);\n  }, 'File must be a PNG');\n```\n\nAbove example validates the file is the correct max file size and file type.",
+    "date": "2023-12-27",
+    "path": "zod-validate-file.md",
+    "title": "Use Zod to validate File input"
+  },
+  {
     "content": "# Smart App Banners\n\nThe banners on top of web apps that promote the native version of the app is controlled using a `<meta>` tag in the HTML:\n\n```html\n<meta name=\"apple-itunes-app\" content=\"app-id=1477376905, app-argument=https://github.com/\" />\n```\n\nSee the [documentation on Promoting Apps with Smart App Banners\n](https://developer.apple.com/documentation/webkit/promoting_apps_with_smart_app_banners). This only works for iOS Safari.\n\nExample from GitHub:\n\n![IMG_1477](https://github.com/petermekhaeil/til/assets/4616064/f7cf2b12-abe9-498e-9962-57fbbcd8f1c0)",
     "date": "2023-12-21",
     "path": "ios-smart-app-banners.md",
