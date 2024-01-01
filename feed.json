@@ -1,5 +1,11 @@
 [
   {
+    "content": "# TypeScript: exactOptionalPropertyTypes\n\nTypeScript handles optional and undefined differently - [exactOptionalPropertyTypes](https://www.typescriptlang.org/tsconfig#exactOptionalPropertyTypes) will help catch scenarios where `undefined` should be typed explicitly.\n\nWhen turned off:\n\n```ts\ntype User = {\n  email?: string;\n}\n\nconst user: User = { email: undefined }\n// Valid\n```\n\nWhen turned on:\n\n```ts\ntype User = {\n  email?: string;\n}\n\nconst user: User = { email: undefined }\n    // Type '{ email: undefined; }' is not assignable to type 'User' with 'exactOptionalPropertyTypes: true'.\n    // Consider adding 'undefined' to the types of the target's properties.\n```\n\nRead [optional vs undefined | TkDodo's blog](https://tkdodo.eu/blog/optional-vs-undefined) to learn the difference and how this can help.",
+    "date": "2024-01-01",
+    "path": "ts-exact-optional-property-types.md",
+    "title": "TypeScript: exactOptionalPropertyTypes"
+  },
+  {
     "content": "# Use Zod to validate File input\n\nYou can use [Zod](https://zod.dev/)'s `instanceof` validator to validate file inputs:\n\n```js\nconst MAX_UPLOAD_SIZE = 1024 * 1024 * 3; // 3MB\nconst ACCEPTED_FILE_TYPES = ['image/png'];\n\nconst Schema = z\n  .instanceof(File)\n  .optional()\n  .refine((file) => {\n    return !file || file.size <= MAX_UPLOAD_SIZE;\n  }, 'File size must be less than 3MB')\n  .refine((file) => {\n    return ACCEPTED_FILE_TYPES.includes(file.type);\n  }, 'File must be a PNG');\n```\n\nAbove example validates the file is the correct max file size and file type.",
     "date": "2023-12-27",
     "path": "zod-validate-file.md",
