@@ -1,5 +1,11 @@
 [
   {
+    "content": "# TypeScript: ElementRef for React.useRef\n\nYou can extract the type from a `useRef` hook using `ElementRef`:\n\n```tsx\nimport { useRef, ElementRef } from \"react\";\n \nconst Component = () => {\n  const audioRef = useRef<ElementRef<\"audio\">>(null);\n//       ^? React.RefObject<HTMLAudioElement>\n\n  return <audio ref={audioRef}>Hello</audio>;\n};\n```\n\nRead [Matt Pocock's Strongly Type useRef with ElementRef](https://www.totaltypescript.com/strongly-type-useref-with-elementref).",
+    "date": "2024-01-03",
+    "path": "ts-react-elementref.md",
+    "title": "TypeScript: ElementRef for React.useRef"
+  },
+  {
     "content": "# Null is a billion-dollar mistake\n\nIn 2009, Tony Hoare describes his invention as a \"billion-dollar mistake\":\n\n> I call it my billion-dollar mistake. It was the invention of the null reference in 1965. At that time, I was designing the first comprehensive type system for references in an object oriented language (ALGOL W). My goal was to ensure that all use of references should be absolutely safe, with checking performed automatically by the compiler. But I couldn't resist the temptation to put in a null reference, simply because it was so easy to implement. This has led to innumerable errors, vulnerabilities, and system crashes, which have probably caused a billion dollars of pain and damage in the last forty years.\n\n## Reading\n\n- https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/\n- https://en.wikipedia.org/wiki/Null_pointer\n- https://en.wikipedia.org/wiki/Tony_Hoare\n- https://maximilianocontieri.com/null-the-billion-dollar-mistake",
     "date": "2024-01-02",
     "path": "null-billion-dollar-mistake.md",
