@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Send analytics data using the Beacon API\n\nThe `navigator.sendBeacon()` method is intended to be used for sending analytics data to a server.\n\n```js\nnavigator.sendBeacon(\"/log\", analyticsData);\n```\n\n- It sends the HTTP POST request asynchronously, with no access to the server response.\n- The request is non-blocking, causing no delay to unload or the next navigation.\n\nSee [documentation](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API) on usage.",
+    "date": "2024-01-28",
+    "path": "js-beacon-api.md",
+    "title": "Send analytics data using the Beacon API"
+  },
+  {
     "content": "# TypeScript: ElementRef for React.useRef\n\nYou can extract the type from a `useRef` hook using `ElementRef`:\n\n```tsx\nimport { useRef, ElementRef } from \"react\";\n \nconst Component = () => {\n  const audioRef = useRef<ElementRef<\"audio\">>(null);\n//       ^? React.RefObject<HTMLAudioElement>\n\n  return <audio ref={audioRef}>Hello</audio>;\n};\n```\n\nRead [Matt Pocock's Strongly Type useRef with ElementRef](https://www.totaltypescript.com/strongly-type-useref-with-elementref).",
     "date": "2024-01-03",
     "path": "ts-react-elementref.md",
