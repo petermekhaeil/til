@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Replace a Git Repository with a New One\n\nSometimes you need to reset a remote Git repository while keeping your local history intact. Here's how:\n\n**1. Add the Remote:**\n```bash\ngit remote add origin <remote-url>\n```\n\nLinks your local repo to the remote.\n\n**2. Force Push to Overwrite Remote History:**\n```bash\ngit push --force --set-upstream origin main\n```\n\nReplaces the remote history with your local history.",
+    "date": "2024-12-25",
+    "path": "git-replace-repo-content.md",
+    "title": "Replace a Git Repository with a New One"
+  },
+  {
     "content": "# Send analytics data using the Beacon API\n\nThe `navigator.sendBeacon()` method is intended to be used for sending analytics data to a server.\n\n```js\nnavigator.sendBeacon(\"/log\", analyticsData);\n```\n\n- It sends the HTTP POST request asynchronously, with no access to the server response.\n- The request is non-blocking, causing no delay to unload or the next navigation.\n\nSee [documentation](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API) on usage.",
     "date": "2024-01-28",
     "path": "js-beacon-api.md",

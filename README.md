@@ -2,8 +2,9 @@
 
 This is a collection of short notes of the things I have learned on a daily basis while working on different technologies. I share these notes as I [learn in public](https://www.learninpublic.org/).
 
-_**113** TILs and counting..._
+_**114** TILs and counting..._
 
+- 2024-12-25: [Replace a Git Repository with a New One](https://github.com/petermekhaeil/til/blob/master/./learnings/git-replace-repo-content.md)
 - 2024-01-28: [Send analytics data using the Beacon API](https://github.com/petermekhaeil/til/blob/master/./learnings/js-beacon-api.md)
 - 2024-01-03: [TypeScript: ElementRef for React.useRef](https://github.com/petermekhaeil/til/blob/master/./learnings/ts-react-elementref.md)
 - 2024-01-02: [Null is a billion-dollar mistake](https://github.com/petermekhaeil/til/blob/master/./learnings/null-billion-dollar-mistake.md)
