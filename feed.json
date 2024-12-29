@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Dart Supports Underscore Digit Separators\n\nIn Dart (starting from version 3.6.0), you can use underscores (`_`) as digit separators in number literals to make them more readable. This is especially handy for large numbers or when grouping digits for higher-level clarity.\n\nHere are some examples:\n\n```dart\nvar n1 = 1_000_000;\nvar n2 = 0.000_000_000_01;\nvar n3 = 0x00_14_22_01_23_45;  // MAC address\nvar n4 = 65_1234_5678;  // SG Phone number\nvar n5 = 100__000_000__000_000;  // one hundred million million!\n```\n\nThis feature makes it easier to read long numeric values and organize digits meaningfully.\n\nDart isn’t alone in supporting this - other languages like JavaScript, Java, Python, and Kotlin also allow underscore digit separators. It's a great example of a feature that crosses language boundaries to make code cleaner and more human-readable.",
+    "date": "2024-12-29",
+    "path": "dart-digit-separators.md",
+    "title": "Dart Supports Underscore Digit Separators"
+  },
+  {
     "content": "# Replace a Git Repository with a New One\n\nSometimes you need to reset a remote Git repository while keeping your local history intact. Here's how:\n\n**1. Add the Remote:**\n```bash\ngit remote add origin <remote-url>\n```\n\nLinks your local repo to the remote.\n\n**2. Force Push to Overwrite Remote History:**\n```bash\ngit push --force --set-upstream origin main\n```\n\nReplaces the remote history with your local history.",
     "date": "2024-12-25",
     "path": "git-replace-repo-content.md",
