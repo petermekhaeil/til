@@ -1,5 +1,11 @@
 [
   {
+    "content": "# Override web content and HTTP response headers locally\n\nChrome DevTools allows you to override API responses and HTTP headers directly in the browser - this is a great feature for testing, debugging, and prototyping without modifying the backend.\n\nYou can:\n\n- **Mock API responses**: Replace live API data with custom JSON or other content.\n- **Modify HTTP headers**: Adjust headers like CORS, Content-Type, or authentication tokens to mimic different scenarios.\n  \nYou just need to enable \"Local Overrides\" in DevTools and edit the response or headers for the network requests you want to tweak.\n\nMore details here: [Chrome DevTools Overrides](https://developer.chrome.com/docs/devtools/overrides)",
+    "date": "2024-12-30",
+    "path": "devtools-overrides.md",
+    "title": "Override web content and HTTP response headers locally"
+  },
+  {
     "content": "# Dart Supports Underscore Digit Separators\n\nIn Dart (starting from version 3.6.0), you can use underscores (`_`) as digit separators in number literals to make them more readable. This is especially handy for large numbers or when grouping digits for higher-level clarity.\n\nHere are some examples:\n\n```dart\nvar n1 = 1_000_000;\nvar n2 = 0.000_000_000_01;\nvar n3 = 0x00_14_22_01_23_45;  // MAC address\nvar n4 = 65_1234_5678;  // SG Phone number\nvar n5 = 100__000_000__000_000;  // one hundred million million!\n```\n\nThis feature makes it easier to read long numeric values and organize digits meaningfully.\n\nDart isn’t alone in supporting this - other languages like JavaScript, Java, Python, and Kotlin also allow underscore digit separators. It's a great example of a feature that crosses language boundaries to make code cleaner and more human-readable.",
     "date": "2024-12-29",
     "path": "dart-digit-separators.md",
